@@ -1,0 +1,79 @@
+---
+
+# This is webhook for discord message
+URL: ""
+
+# Database configuration.
+MySQL:
+  # Here must go your IP of the connection to MySQL
+  hostname: "DESKTOP-VND1J9K"
+  # the username (in local mode is always 'root') of your hostname
+  username: "root"
+  # If you do not have a password (if you are in local mode) do not change anything or the connection to MySQL will not be established
+  password: "toor"
+  # The connection to create the tables, etc.
+  database: "localhost_testing"
+  # Use it if the connection is not local
+  port: 3306
+
+# Global configuration of the functions of the server
+
+Global:
+# This configuration sets the time of each function (indicated by its name)
+Cooldowns:
+  # These are the cooldowns of the items, or other things within the server that can be modified to have more or less time
+  EnderPearl: 10
+
+  CombatTag: 25
+
+  ArcherTag: 10
+
+  Apple: 15
+
+  EggPort: 15
+
+  SpecialItem: 15
+
+  StormBreaker: 120
+
+  NinjaShear: 120
+
+  PotionCounter: 90
+
+  AntiTrapper: 120
+
+  AntiTrapperTarget: 20
+
+  # These seconds are for the commands '/f home, /f stuck and /logout'.
+  Home: 25
+
+  Stuck: 35
+
+  Logout: 30
+
+# Here you can modify the maximum values of the map factions (testing)
+FactionsConfig:
+  # Maximum players per map faction
+  maxPlayers: 15
+
+  # You can modify if the water has a radius or is static
+  SpreadWater: false
+  # The edge of the end of map
+  BorderLimit: 2000
+  # Wilderness limit to build
+  Wilderness: 400
+
+# This configuration takes care of the entities available to spawners in the worlds
+LevelManager:
+  # This time is the time it takes for the spawner to create another entity
+  EntitySpawnDelay: 400
+  # Modifiable end world
+  levelEndName: "End"
+  # Modifiable end world
+  levelNetherName: "Nether"
+    
+# These blocks are the ones you must pass through to enter the End or exit the End
+block_ids: ["119:0", "120:0"]
+
+# These are the items that are blocked on the server
+items_id: ["46:0", "259:0"]

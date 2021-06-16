@@ -1,0 +1,48 @@
+---
+# Scoreboard Configuration
+scoreboard_name: "&5sViral &7| &4V2"
+
+# Information: '{time}' takes the value of the remaining time
+CombatTag: "&c&lCombatTag&r&f: &7{time} "
+
+EnderPearl: "&9&lEnderPearl&r&f: &7{time} "
+
+StormBreaker: "&6&lStormBreaker&r&f: &7{time} "
+
+AntiTrapper: "&6&lAntiTrapper&r&f: &7{time} "
+
+EggPort: "&6&lEggPort&r&f: &7{time} "
+
+SpecialItem: "&l&dPartner Item&r&f: &7{time} "
+
+NinjaShear: "&l&6NinjaShear&r&f: &7{time} "
+
+PotionCounter: "&l&6PotionCounter&r&f: &7{time} "
+
+Apple: "&6&lApple&r&f: &7{time} "
+
+Logout: "&9&lLogout&r&f: &7{time} "
+
+Home: "&b&lHome&r&f: &7{time} "
+
+Stuck: "&4&lStuck&r&f: &7{time} "
+
+SOTW: "&a&lSOTW ends in&r&f: &7{time} "
+
+EOTW: "&e&lEOTW ends in&r&f: &7{time} "
+
+KOTH: "&l&9{kothName}&r&f: &7{time} "
+
+Invincibility: "&a&lInvincibility&r&f: &7{time} "
+
+BardEnergy: "&b&lBardEnergy&r&f: &c{bardEnergy}.0"
+
+ArcherEnergy: "&d&lArcherEnergy&r&f: &c{archerEnergy}.0"
+
+# These texts are displayed if the player focused on any faction
+factionFocus: [ 
+  "&l&9Faction&r&f: &9{factionName} ", 
+  "&l&9Home&r&f: &9{factionHome} ", 
+  "&l&9DTR&r&f: &9{factionDTR} ", 
+  "&l&9Online&r&f: &9{factionOnlinePlayers} ", 
+]
