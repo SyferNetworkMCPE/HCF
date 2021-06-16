@@ -41,9 +41,9 @@ class EnderPearl extends \pocketmine\item\ProjectileItem {
 	/**
 	 * @return float
 	 */
-	public function getThrowForce() : float {
-		return 2.1;
-	}
+    public function getThrowForce() : float{
+        return 1.5;
+    }
 
 	/**
 	 * @return Int
