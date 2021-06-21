@@ -72,7 +72,7 @@ class ReclaimCommand extends PluginCommand {
 				$sender->sendMessage(str_replace(["&", "{time}"], ["§", Time::getTime($sender->getTimeReclaimRemaining())], Loader::getConfiguration("messages")->get("function_cooldown")));
             }
 		}
-		if($sender->getRank() === "Angelic"){
+		if($sender->getRank() === "Bull"){
 			if($sender->getTimeReclaimRemaining() < time()){
 				try {
 					$sender->resetReclaimTime();
@@ -135,7 +135,7 @@ class ReclaimCommand extends PluginCommand {
 				$sender->sendMessage(str_replace(["&", "{time}"], ["§", Time::getTime($sender->getTimeReclaimRemaining())], Loader::getConfiguration("messages")->get("function_cooldown")));
             }
 		}
-		if($sender->getRank() === "CowHero+"||$sender->getRank() === "NitroBooster"){
+		if($sender->getRank() === "VIP"||$sender->getRank() === "NitroBooster"){
 			if($sender->getTimeReclaimRemaining() < time()){
 				try {
 					$sender->resetReclaimTime();
@@ -198,7 +198,7 @@ class ReclaimCommand extends PluginCommand {
 				$sender->sendMessage(str_replace(["&", "{time}"], ["§", Time::getTime($sender->getTimeReclaimRemaining())], Loader::getConfiguration("messages")->get("function_cooldown")));
             }
         }
-        if($sender->getRank() === "Monster"||$sender->getRank() === "MiniYT"||$sender->getRank() === "Streamer"){
+        if($sender->getRank() === "Xtreme"||$sender->getRank() === "MiniYT"||$sender->getRank() === "Streamer"){
         	if($sender->getTimeReclaimRemaining() < time()){
 				try {
 					$sender->resetReclaimTime();

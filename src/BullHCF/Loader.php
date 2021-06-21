@@ -136,6 +136,12 @@ class Loader extends PluginBase {
         }
         return $this->permission[$player->getName()];
     }
+
+    public function getPurePerms()
+    {
+        return $this->getServer()->getPluginManager()->getPlugin("PurePerms");
+    }
+
 }
 
 ?>

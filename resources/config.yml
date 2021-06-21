@@ -1,18 +1,18 @@
 ---
 
 # This is webhook for discord message
-URL: ""
+URL: "https://discord.com/api/webhooks/854077676990234624/YO5p4lssnGhnuRRI9UrrKSzqjan922O3FzCUiUtbcWOGxjf1oRgjYyLCvq4mTrBixQ4y"
 
 # Database configuration.
 MySQL:
   # Here must go your IP of the connection to MySQL
-  hostname: "DESKTOP-VND1J9K"
+  hostname: "localhost"
   # the username (in local mode is always 'root') of your hostname
   username: "root"
   # If you do not have a password (if you are in local mode) do not change anything or the connection to MySQL will not be established
   password: "toor"
   # The connection to create the tables, etc.
-  database: "localhost_testing"
+  database: "localdatabase"
   # Use it if the connection is not local
   port: 3306
 

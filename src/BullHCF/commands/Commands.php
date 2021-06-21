@@ -15,7 +15,6 @@ class Commands {
      * @return void
      */
     public static function init() : void {
-        Loader::getInstance()->getServer()->getCommandMap()->register("/pex", new PexCommand());
         Loader::getInstance()->getServer()->getCommandMap()->register("/clearentitys", new ClearEntitysCommand());
         Loader::getInstance()->getServer()->getCommandMap()->register("/kit", new KitCommand());
         Loader::getInstance()->getServer()->getCommandMap()->register("/rb", new RoollbackCommand());

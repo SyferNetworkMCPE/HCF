@@ -32,7 +32,6 @@ class YamlProvider {
 		}
 		Loader::getInstance()->saveResource("config.yml");
 		Loader::getInstance()->saveResource("messages.yml");
-		Loader::getInstance()->saveResource("permissions.yml");
 		Loader::getInstance()->saveResource("scoreboard_settings.yml");
 		Loader::getInstance()->saveResource("bot_settings.yml");
 		Loader::getInstance()->getLogger()->info(TE::GREEN."YamlProvider » was loaded successfully!");

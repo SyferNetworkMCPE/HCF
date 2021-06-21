@@ -120,12 +120,6 @@ class Player extends \pocketmine\Player {
 
     /** @var bool */
     protected $teleportHome = false, $teleportStuck = false, $logout = false;
-    
-    /** @var String */
-    protected $rank = null;
-
-    /** @var String */
-    protected $prefix = null;
 
     /** @var String */
     protected $chat = null;
@@ -175,35 +169,6 @@ class Player extends \pocketmine\Player {
 		$pk->eventData = Binary::writeShort(strlen("Connect")) . "Connect" . Binary::writeShort(strlen($server)) . $server;
         $this->sendDataPacket($pk);
         return true;
-    }
-
-    /**
-     * @param String $rank
-     * If the value is null then the Guest rank is placed
-     */
-    public function setRank(?String $rank = null){
-    	$this->rank = $rank;
-    }
-    
-    /**
-     * @return String
-     */
-    public function getRank() : String {
-    	return $this->rank === null ? "Guest" : $this->rank;
-    }
-
-    /**
-     * @param String $prefix
-     */
-    public function setPrefix(String $prefix = null){
-        $this->prefix = $prefix;
-    }
-
-    /**
-     * @return String|null
-     */
-    public function getPrefix() : ?String {
-        return $this->prefix;
     }
 
     /**
@@ -980,7 +945,7 @@ class Player extends \pocketmine\Player {
      * @return void
      */
     public function resetKothHostTime() : void {
-        PlayerBase::setData($this->getName(), "koth_host", $this->getRank() === "Angelic" ? time() + (2 * 3600) : time() + (3 * 3600));
+        PlayerBase::setData($this->getName(), "koth_host", $this->getRank() === "Bull" ? time() + (2 * 3600) : time() + (3 * 3600));
     }
     
     /**
@@ -1144,128 +1109,9 @@ class Player extends \pocketmine\Player {
     /**
      * @return void
      */
-    public function addPermissionsPlayer() : void {
-        $permission = Loader::getInstance()->getPermission($this);
-		if($this->getRank() === "Guest"){
-            $permission->setPermission("free.kit.use", true);
-		}
-        if($this->getRank() === "Sr-Admin"){
-			$file = Loader::getConfiguration("permissions");
-            foreach($file->get($this->getRank()) as $permissions){
-                $permission->setPermission($permissions, true);
-            }
-        }
-		if($this->getRank() === "Admin"){
-			$file = Loader::getConfiguration("permissions");
-            foreach($file->get($this->getRank()) as $permissions){
-                $permission->setPermission($permissions, true);
-            }
-		}
-		if($this->getRank() === "Jr-Admin"){
-			$file = Loader::getConfiguration("permissions");
-            foreach($file->get($this->getRank()) as $permissions){
-                $permission->setPermission($permissions, true);
-            }
-		}
-        if($this->getRank() === "Sr-Mod"){
-			$file = Loader::getConfiguration("permissions");
-            foreach($file->get($this->getRank()) as $permissions){
-                $permission->setPermission($permissions, true);
-            }
-		}
-		if($this->getRank() === "Mod"){
-			$file = Loader::getConfiguration("permissions");
-            foreach($file->get($this->getRank()) as $permissions){
-                $permission->setPermission($permissions, true);
-            }
-		}
-		if($this->getRank() === "Trainee"){
-			$file = Loader::getConfiguration("permissions");
-            foreach($file->get($this->getRank()) as $permissions){
-                $permission->setPermission($permissions, true);
-            }
-		}
-		if($this->getRank() === "Monster"){
-			$file = Loader::getConfiguration("permissions");
-            foreach($file->get($this->getRank()) as $permissions){
-                $permission->setPermission($permissions, true);
-            }
-		}
-		if($this->getRank() === "VitalHero"){
-			$file = Loader::getConfiguration("permissions");
-            foreach($file->get($this->getRank()) as $permissions){
-                $permission->setPermission($permissions, true);
-            }
-		}
-        if($this->getRank() === "VitalHero+"){
-			$file = Loader::getConfiguration("permissions");
-            foreach($file->get($this->getRank()) as $permissions){
-                $permission->setPermission($permissions, true);
-            }
-		}
-        if($this->getRank() === "NitroBooster"){
-			$file = Loader::getConfiguration("permissions");
-            foreach($file->get($this->getRank()) as $permissions){
-                $permission->setPermission($permissions, true);
-            }
-		}
-        if($this->getRank() === "Demon"){
-            $file = Loader::getConfiguration("permissions");
-            foreach($file->get($this->getRank()) as $permissions){
-                $permission->setPermission($permissions, true);
-            }
-		}
-		if($this->getRank() === "Angelic"){
-            $file = Loader::getConfiguration("permissions");
-            foreach($file->get($this->getRank()) as $permissions){
-                $permission->setPermission($permissions, true);
-            }
-		}
-        if($this->getRank() === "MiniYT"){
-			$file = Loader::getConfiguration("permissions");
-            foreach($file->get($this->getRank()) as $permissions){
-                $permission->setPermission($permissions, true);
-            }
-		}
-        if($this->getRank() === "Twitch"){
-			$file = Loader::getConfiguration("permissions");
-            foreach($file->get($this->getRank()) as $permissions){
-                $permission->setPermission($permissions, true);
-            }
-		}
-        if($this->getRank() === "YouTuber"){
-			$file = Loader::getConfiguration("permissions");
-            foreach($file->get($this->getRank()) as $permissions){
-                $permission->setPermission($permissions, true);
-            }
-		}
-        if($this->getRank() === "Famous"){
-			$file = Loader::getConfiguration("permissions");
-            foreach($file->get($this->getRank()) as $permissions){
-                $permission->setPermission($permissions, true);
-            }
-		}
-		if($this->getRank() === "Partner"){
-			$file = Loader::getConfiguration("permissions");
-            foreach($file->get($this->getRank()) as $permissions){
-                $permission->setPermission($permissions, true);
-            }
-		}
-    }
-
-    /**
-     * @return void
-     */
-    public function removePermissionsPlayer() : void {
-        unset(Loader::getInstance()->permission[$this->getName()]);
-    }
-
-    /**
-     * @return void
-     */
     public function showCoordinates() : void {
         $pk = new GameRulesChangedPacket();
-        $pk->gameRules = ["showcoordinates" => [1, true]];
+        $pk->gameRules = ["showcoordinates" => [1, true, false]];
         $this->dataPacket($pk);
     }
     
@@ -1277,6 +1123,11 @@ class Player extends \pocketmine\Player {
 		$http = file_get_contents('http://www.geoplugin.net/json.gp?ip='.$ip);
 		$handle = json_decode($http);
 		return $handle->geoplugin_countryName;
+    }
+
+    public function getRank()
+    {
+        return Loader::getInstance()->getPurePerms()->getUserDataMgr()->getGroup($this);
     }
 }
 
