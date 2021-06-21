@@ -6,7 +6,7 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
 
 use BullHCF\provider\{
-    SQLite3Provider, YamlProvider, MysqlProvider,
+    SQLite3Provider, YamlProvider,
 };
 use BullHCF\player\{
     Player,
@@ -63,7 +63,6 @@ class Loader extends PluginBase {
      * @return void
      */
     public function onEnable() : void {
-        MysqlProvider::connect();
         SQLite3Provider::connect();
 
         Listeners::init();
@@ -87,7 +86,6 @@ class Loader extends PluginBase {
      */
     public function onDisable() : void {
         SQLite3Provider::disconnect();
-        MysqlProvider::disconnect();
 
         YamlProvider::save();
     }
