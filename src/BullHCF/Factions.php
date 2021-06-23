@@ -250,7 +250,7 @@ class Factions {
 
     /**
      * @param String $factionName
-     * @return Int
+     * @return Int|null
      */
     public static function getStrength(String $factionName) : Int {
         $data = SQLite3Provider::getDataBase()->query("SELECT * FROM strength WHERE factionName = '$factionName';");
