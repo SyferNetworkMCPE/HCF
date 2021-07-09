@@ -2,7 +2,7 @@
 
 namespace BullHCF\listeners;
 
-use BullHCF\{Loader, Factions};
+use BullHCF\{item\PackageItem, Loader, Factions};
 use BullHCF\player\Player;
 
 use BullHCF\utils\Time;
@@ -12,7 +12,15 @@ use BullHCF\Task\specials\{StormBreakerTask, AntiTrapperTask, SpecialItemTask, N
 
 use BullHCF\Task\delayedtask\{StormBreakerDelayed};
 
-use BullHCF\item\specials\{StormBreaker, AntiTrapper, Strength, Resistance, Invisibility, PotionCounter, Firework, PrePearl};
+use BullHCF\item\specials\{EggPorts,
+    StormBreaker,
+    AntiTrapper,
+    Strength,
+    Resistance,
+    Invisibility,
+    PotionCounter,
+    Firework,
+    PrePearl};
 
 use pocketmine\utils\TextFormat as TE;
 use pocketmine\event\Listener;
@@ -238,6 +246,25 @@ class SpecialItems implements Listener {
                 $player->setSpecialItem(true);
                 Loader::getInstance()->getScheduler()->scheduleRepeatingTask(new SpecialItemTask($player), 20);
             }
+        }
+        if ($item instanceof PackageItem){
+            $item->setCount($item->getCount() -1);
+            $eggports = new EggPorts();
+            $antitrapper = new AntiTrapper();
+            $strength = new Strength();
+            $resistance = new Resistance();
+            $invisibility = new Invisibility();
+            $potionCounter = new PotionCounter();
+            $firework = new Firework();
+            $stormbreaker = new StormBreaker();
+            $player->getInventory()->addItem($strength);
+            $player->getInventory()->addItem($antitrapper);
+            $player->getInventory()->addItem($resistance);
+            $player->getInventory()->addItem($invisibility);
+            $player->getInventory()->addItem($potionCounter);
+            $player->getInventory()->addItem($firework);
+            $player->getInventory()->addItem($stormbreaker);
+            $player->getInventory()->addItem($eggports);
         }
     }
 }

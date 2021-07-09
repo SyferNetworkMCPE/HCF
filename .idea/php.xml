@@ -2,8 +2,7 @@
 <project version="4">
   <component name="PhpIncludePathManager">
     <include_path>
-      <path value="$PROJECT_DIR$/../../../../../API'S/PocketMine-MP" />
-      <path value="$PROJECT_DIR$/../../../../../API'S/PurePerms" />
+      <path value="$PROJECT_DIR$/../../PocketMine-MP" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3">

@@ -11,9 +11,7 @@ use BullHCF\provider\{
 use BullHCF\player\{
     Player,
 };
-use BullHCF\API\{
-    Scoreboards,
-};
+use BullHCF\API\{InvMenu\InvMenuHandler, Scoreboards};
 use BullHCF\Task\{
 	BardTask, ArcherTask,
 };
@@ -75,10 +73,14 @@ class Loader extends PluginBase {
         YamlProvider::init();
         
         Factions::init();
+        if(!InvMenuHandler::isRegistered()){
+            InvMenuHandler::register($this);
+        }
 
         $this->getScheduler()->scheduleRepeatingTask(new BardTask(), 20);
         $this->getScheduler()->scheduleRepeatingTask(new ArcherTask(), 20);
         $this->getScheduler()->scheduleRepeatingTask(new FactionTask(), 5 * 60 * 40);
+
     }
     
     /**

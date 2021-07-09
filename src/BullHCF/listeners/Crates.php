@@ -2,11 +2,10 @@
 
 namespace BullHCF\listeners;
 
-use BullHCF\{Loader, Factions};
+use BullHCF\{API\InvMenu\InvMenu, Loader, Factions};
 use BullHCF\player\Player;
 
 use BullHCF\crate\CrateManager;
-use BullHCF\API\InvMenu\type\ChestInventory;
 
 use pocketmine\utils\{Config, TextFormat as TE};
 use pocketmine\event\Listener;
@@ -90,20 +89,21 @@ class Crates implements Listener {
 			}
 		}
 	}
-	
-	/**
-	 * @param Player $player
-	 * @param String $type
-	 * @return void
-	 */
-	public function seeRewards(Player $player, String $type) : void {
-		/**$crate = CrateManager::getCrate($type);
-		$inventory = new ChestInventory();
-		$inventory->setContents($crate->getItems());
-		$player->addWindow($inventory);*/
-	}
-	
-	/**
+
+    /**
+     * @param Player $player
+     * @param String $type
+     * @return void
+     */
+    public function seeRewards(Player $player, String $type) : void {
+        $crate = CrateManager::getCrate($type);
+        $menu = InvMenu::create(InvMenu::TYPE_CHEST);
+        $menu->setName($crate->getNameFormat());
+        $menu->getInventory()->setContents($crate->getItems());
+        $menu->send($player);
+    }
+
+    /**
 	 * @param String $type
 	 * @return Array[]
 	 */

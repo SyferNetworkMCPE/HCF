@@ -38,6 +38,7 @@ class Items {
 		ItemFactory::registerItem(new Invisibility(), true);
 		ItemFactory::registerItem(new PotionCounter(), true);
 		ItemFactory::registerItem(new Firework(), true);
+		ItemFactory::registerItem(new PackageItem(), true);
 	}
 
 	/**
