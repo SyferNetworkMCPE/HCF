@@ -35,7 +35,7 @@ class FireResistance extends CustomEnchantment {
      * @return String
      */
     public function getNameWithFormat() : String {
-    	return TE::RESET.TE::GOLD."Fire Resistance II";
+    	return TE::RESET.TE::RED."Fire Resistance II";
     }
 
         /**
