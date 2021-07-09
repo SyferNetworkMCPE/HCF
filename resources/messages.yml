@@ -15,7 +15,7 @@ sender_logout: "&eJust started the logout time &d{time}s. &eDon't move or telepo
 sender_has_not_money: "&cYou don't have enough money to do this, current money: &e{money}"
 
 sender_did_not_focus_faction: "&cYou can't run this command, because you didn't focus on any faction!"
-sender_not_in_faction: "&cYou are not in any faction you cannot execute this!" 
+sender_not_in_faction: "&cYou are not in any faction you cannot execute this!"
 
 sender_join_faction_correctly: "&aYou entered the faction &6{factionName} &acorrectly!"
 sender_leave_of_faction_correctly: "&aYou got out of the faction &6{factionName} &acorrectly!"
@@ -62,10 +62,10 @@ player_invite_correctly: "&aYou were invited to the faction &e{factionName}&a, y
 player_decline_invitation_correctly: "&cYou correctly declined the invitation of the faction &e{factionName}"
 
 player_have_invincibility: "&cYou have &l&dInvincibility&r&c place &6'/pvp enable' for this"
-other_player_have_invincibility: "&6{playerName}&r&c have &l&dInvincibility&r&c by &6{time}"
+other_player_have_invincibility: "&b{playerName}&r&c have &l&9Invincibility&r&c by &6&l{time}"
 
-player_not_enter_zone_with_invincibility: "&cYou can't login while you have &l&dInvincibility&r&c put the command &6'/pvp enable'"
-player_not_execute_command_with_invincibility: "&cYou can't run this command with &l&dInvincibility&r&c put the command &6'/pvp enable'"
+player_not_enter_zone_with_invincibility: "&cYou can't login while you have &l&9Invincibility&r&c put the command &a'/pvp enable'"
+player_not_execute_command_with_invincibility: "&cYou can't run this command with &l&9Invincibility&r&c put the command &a'/pvp enable'"
 
 # FACTION OPTIONS:
 
@@ -117,12 +117,12 @@ faction_zone_cancel: "&cYour request to claim a zone was canceled!"
 
 faction_small_distance_of_spawn: "&cYou can make your claim only in &r&7Wilderness&r&c, or after 400 blocks away from the spawn!"
 
-faction_location_zone_first: "&aLocation of claim selection &efirst &ato: &6(&e{positionX}, {positionZ}&6)"
-faction_location_zone_second: "&aLocation of claim selection &esecond &ato: &6(&e{positionX}, {positionZ}&6)"
+faction_location_zone_first: "&aLocation of claim selection &bfirst &ato: &6(&e{positionX}, {positionZ}&6)"
+faction_location_zone_second: "&aLocation of claim selection &bsecond &ato: &6(&e{positionX}, {positionZ}&6)"
 
 faction_zone_not_select_position: "&cYou cannot accept because you did not mark the 2 positions correctly!"
 
-faction_claim_zone_help: "&aYou can make your claim, touch a block to register &eposition 1&a, then break a block for &eposition 2"
+faction_claim_zone_help: "&aYou can make your claim, touch a block to register &bposition 1&a, then break a block for &bposition 2"
 faction_not_have_money_for_claim_zone: "&cThe money of your faction is not enough to make your claim!"
 
 faction_information: "&e{factionName} &7[{players}&e/&7{maxPlayers}]&r &7- &eHome: &7{home}%n%
@@ -133,7 +133,7 @@ faction_information: "&e{factionName} &7[{players}&e/&7{maxPlayers}]&r &7- &eHom
 &6Time Until Regen&f: &a{timeRegen} minutes%n%
 &6Deaths until Raidable&f: &a{currentDtr}"
 
-faction_list_information: "&l&9{factionName}&r&f - &9Online&f: &9[&9{onlinePlayers}&7/&9{maxPlayers}&9]" 
+faction_list_information: "&l&9{factionName}&r&f - &9Online&f: &9[&9{onlinePlayers}&7/&9{maxPlayers}&9]"
 
 # ARCHER OPTIONS:
 
@@ -154,6 +154,22 @@ bard_global_give_effects: "&6{playerName}&r&7 just gave your faction members the
 bard_give_effects: "&aYou just gave yourself the effect of &b{effectName} {effectLevel}"
 
 bard_not_enough_energy: "&aYou don't have enough energy to give that effect &b{currentEnergy}.0 &ayou need &e{needEnergy}.0"
+
+# GHOST OPTIONS:
+
+ghost_global_give_effects: "&6{playerName}&r&7 just gave your faction members the effect &b{effectName} {effectLevel}"
+
+ghost_give_effects: "&aYou just gave yourself the effect of &b{effectName} {effectLevel}"
+
+ghost_not_enough_energy: "&aYou don't have enough energy to give that effect &b{currentEnergy}.0 &ayou need &e{needEnergy}.0"
+
+# MAGE OPTIONS:
+
+mage_global_give_effects: "&6{playerName}&r&7 just gave your faction members the effect &b{effectName} {effectLevel}"
+
+mage_give_effects: "&aYou just gave yourself the effect of &b{effectName} {effectLevel}"
+
+mage_not_enough_energy: "&aYou don't have enough energy to give that effect &b{currentEnergy}.0 &ayou need &e{needEnergy}.0"
 
 # COOLDOWN OPTIONS:
 
@@ -205,8 +221,8 @@ player_roollback_correctly: "&aObtained the inventory of &l&e{playerName}"
 
 # PvPCommand: These texts are displayed in the PvP command
 
-player_invincibility_is_enable: "&cYour &l&dInvisibility&r&c has already been deactivated"
-player_invisibility_enable_correnctly: "&aYou successfully disabled your &l&dInvisibility"
+player_invincibility_is_enable: "&cYour &l&9Invisibility&r&c has already been deactivated"
+player_invisibility_enable_correnctly: "&aYou successfully disabled your &l&9Invisibility"
 
 player_check_lives: "&aYou have a total of &l&6{currentLives}&r&a lives"
 player_check_other_player_lives: "&l&6{playerName}&r&a has a total of &l&6{currentLives}&r&a lives"
@@ -251,10 +267,10 @@ kit_edit_items_correctly: "&aKit content &l&6{kitName}&r&a was edited correctly!
 kit_edit_permission_correctly: "&aKit permission &l&6{kitName}&r&a was edited correctly!"
 kit_edit_format_correctly: "&aKit format &l&6{kitName}&r&a was edited correctly!"
 
-# KOTH OPTIONS: 
+# KOTH OPTIONS:
 
-koth_create_correctly: "&aKoth &l&6{kothName}&r &awas created successfully!"
-koth_delete_correctly: "&aKoth &l&6{kothName}&r &awas deleted successfully!"
+koth_create_correctly: "&aKoth &l&9{kothName}&r &awas created successfully!"
+koth_delete_correctly: "&aKoth &l&9{kothName}&r &awas deleted successfully!"
 
 koth_alredy_exists: "&cThe koth &e{kothName}&c has already been created before!"
 koth_not_exists: "&cThe Koth &e{kothName}&c was never registered!"
@@ -262,15 +278,36 @@ koth_not_exists: "&cThe Koth &e{kothName}&c was never registered!"
 koth_alredy_enable: "&c{kothName} was already activated, if you want to turn on another KOTH, you must turn off the current one or wait for it to finish!"
 koth_is_not_activated: "&c{kothName} KOTH is not activated"
 
-koth_was_started: "&l&8[&l&6KoTH&r&l&8]&r &e{kothName}&r&f was started, go to claim unique rewards!"
+koth_was_started: "&l&8[&l&9KoTH&r&l&8]&r &b{kothName}&r&f was started, go to claim unique rewards!"
 
-koth_is_capturing: "&l&8[&l&6KoTH&r&l&8]&r &e{playerName}&r&f is now capturing &e{kothName} KOTH"
-koth_is_captured: "&l&8[&l&6KoTH&r&l&8]&r &e{kothName} KOTH&r&f was captured by &e{playerName}"
+koth_is_capturing: "&l&8[&l&9KoTH&r&l&8]&r &b{playerName}&r&f is now capturing &b{kothName} KOTH"
+koth_is_captured: "&l&8[&l&9KoTH&r&l&8]&r &b{kothName} KOTH&r&f was captured by &b{playerName}"
 
 koth_not_have_arenas: "&cYou cannot see the list, because there is no registered KOTH"
 
 koth_list_of_arenas: "&6KOTH Arenas: "
 koth_list: "&a{kothName}&r&f &8[&f{position}&8:&f{worldName}&8]&r &e(&f{status}&e)"
+
+# CITADEL OPTIONS:
+
+citadel_create_correctly: "&acitadel &l&9{citadelName}&r &awas created successfully!"
+citadel_delete_correctly: "&acitadel &l&9{citadelName}&r &awas deleted successfully!"
+
+citadel_alredy_exists: "&cThe citadel &e{citadelName}&c has already been created before!"
+koth_not_exists: "&cThe citadel &e{citadelName}&c was never registered!"
+
+citadel_alredy_enable: "&c{citadelName} was already activated, if you want to turn on another CITADEL, you must turn off the current one or wait for it to finish!"
+citadel_is_not_activated: "&c{citadelName} CITADEL is not activated"
+
+citadel_was_started: "&l&8[&l&6CITADEL&r&l&8]&r &6{citadelName}&r&f was started, go to claim unique rewards!"
+
+citadel_is_capturing: "&l&8[&l&6CITADEL&r&l&8]&r &6{playerName}&r&f is now capturing &6{citadelName} CITADEL"
+citadel_is_captured: "&l&8[&l&6CITADEL&r&l&8]&r &6{citadelName} CITADEL&r&f was captured by &b{playerName}"
+
+citadel_not_have_arenas: "&cYou cannot see the list, because there is no registered CITADEL"
+
+citadel_list_of_arenas: "&6CITADEL Arenas: "
+citadel_list: "&a{citadelName}&r&f &8[&f{position}&8:&f{worldName}&8]&r &e(&f{status}&e)"
 
 # SHOPS OPTIONS:
 

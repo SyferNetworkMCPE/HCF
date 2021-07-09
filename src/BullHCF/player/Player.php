@@ -26,7 +26,7 @@ class Player extends \pocketmine\Player {
 
     const LEADER = "Leader", CO_LEADER = "Co_Leader", MEMBER = "Member";
 
-    const FACTION_CHAT = "Faction", PUBLIC_CHAT = "Public";
+    const FACTION_CHAT = "Faction", PUBLIC_CHAT = "Public", ALLY_CHAT = "Ally";
 
     /** @var Int */
     protected $bardEnergy = 0, $archerEnergy = 0;
@@ -40,6 +40,9 @@ class Player extends \pocketmine\Player {
     /** @var Int */
     protected $stormBreakerTime = 0;
 
+    /** @var int */
+    protected $ninjaShearTime = 0;
+
     /** @var Int  */
     protected $potionCounterTime = 0;
 
@@ -48,10 +51,13 @@ class Player extends \pocketmine\Player {
 
     /** @var Int */
     protected $eggTime = 0;
-    
+
     /** @var Int */
     protected $archerTagTime = 0;
-    
+
+    /** @var Int */
+    protected $ghostTagTime = 0;
+
     /** @var Int */
     protected $goldenAppleTime = 0;
 
@@ -62,13 +68,58 @@ class Player extends \pocketmine\Player {
     protected $movementTime = 0;
 
     /** @var Int */
+    protected $mageEnergy = 0;
+
+    /** @var Int */
+    protected $ghostEnergy = 0;
+
+    /** @var Int */
     protected $teleportHomeTime = 0, $teleportStuckTime = 0, $logoutTime = 0;
-    
+
     /** @var Int */
     protected $invincibilityTime = 0;
 
     /** @var Int */
     protected $specialItemTime = 0;
+
+    /** @var Int */
+    protected $loggerBaitTime = 0;
+
+    /** @var Int */
+    protected $effectDisableTime = 0;
+
+    /** @var Int */
+    protected $prePearlTime = 0;
+
+    /** @var Int */
+    protected $rareBrickTime = 0;
+
+    /** @var Int */
+    protected $loggerBait = 0;
+
+    /** @var Int */
+    protected $globalItemTime = 0;
+
+    /** @var Int */
+    protected $backstapTime = 0;
+
+    /** @var Int */
+    protected $secondChanceTime = 0;
+
+    /** @var bool */
+    protected $globalItem = false;
+
+    /** @var bool */
+    protected $backstap = false;
+
+    /** @var bool */
+    protected $secondChance = false;
+
+    /** @var bool */
+    protected $badEffects = false;
+
+    /** @var bool  */
+    protected $potionCounter = false;
 
     /** @var bool */
     protected $godMode = false;
@@ -82,18 +133,21 @@ class Player extends \pocketmine\Player {
     /** @var bool */
     protected $stormBreaker = false;
 
-    /** @var bool  */
-    protected $potionCounter = false;
+    /** @var bool */
+    protected $ninjaShear = false;
 
     /** @var bool */
     protected $antiTrapper = false, $antiTrapperTarget = false;
 
     /** @var bool */
     protected $egg = false;
-    
+
     /** @var bool */
     protected $archerTag = false;
-    
+
+    /** @var bool */
+    protected $ghostTag = false;
+
     /** @var bool */
     protected $goldenApple = false;
 
@@ -102,13 +156,13 @@ class Player extends \pocketmine\Player {
 
     /** @var bool */
     protected $canInteract = false;
-    
+
     /** @var bool */
     protected $viewingMap = false;
 
     /** @var bool */
     protected $invitation = false;
-    
+
     /** @var bool */
     protected $invincibility = false;
 
@@ -122,11 +176,17 @@ class Player extends \pocketmine\Player {
     protected $teleportHome = false, $teleportStuck = false, $logout = false;
 
     /** @var String */
+    protected $rank = null;
+
+    /** @var String */
+    protected $prefix = null;
+
+    /** @var String */
     protected $chat = null;
-    
+
     /** @var String */
     protected $currentInvite = null;
-    
+
     /** @var String */
     protected $currentRegion = null;
 
@@ -141,6 +201,9 @@ class Player extends \pocketmine\Player {
 
     /** @var Array[] */
     protected $armorEffects = [];
+
+    /** @var Array[] */
+    protected $playerClass = [];
 
     /**
      * @param Int $currentTick
@@ -158,17 +221,47 @@ class Player extends \pocketmine\Player {
         if($this->isAutoFeed()) $this->setFood(20);
         return parent::onUpdate($currentTick);
     }
-    
+
     /**
      * @param String $server
      * @return bool
      */
     public function transferToServer(?String $server) : bool {
-    	$pk = new ScriptCustomEventPacket();
-        $pk->eventName = "bungeecord:main";
-		$pk->eventData = Binary::writeShort(strlen("Connect")) . "Connect" . Binary::writeShort(strlen($server)) . $server;
+        $pk = new ScriptCustomEventPacket();
+        $pk->eventName = "45.134.8.12:19166";
+        $pk->eventData = Binary::writeShort(strlen("Connect")) . "diver.ddns.net:19132" . Binary::writeShort(strlen($server)) . $server;
         $this->sendDataPacket($pk);
         return true;
+    }
+
+    /**
+     * @param String $rank
+     * If the value is null then the Guest rank is placed
+     */
+    public function setRank(?String $rank = null){
+        $this->rank = $rank;
+    }
+
+    /**
+     * @return String
+     */
+    public function getRank()
+    {
+        return Loader::getInstance()->getPurePerms()->getUserDataMgr()->getGroup($this);
+    }
+
+    /**
+     * @param String $prefix
+     */
+    public function setPrefix(String $prefix = null){
+        $this->prefix = $prefix;
+    }
+
+    /**
+     * @return String|null
+     */
+    public function getPrefix() : ?String {
+        return $this->prefix;
     }
 
     /**
@@ -184,7 +277,7 @@ class Player extends \pocketmine\Player {
     public function setBardEnergy(Int $bardEnergy){
         $this->bardEnergy = $bardEnergy;
     }
-    
+
     /**
      * @return Int|null
      */
@@ -198,40 +291,136 @@ class Player extends \pocketmine\Player {
     public function setArcherEnergy(Int $archerEnergy){
         $this->archerEnergy = $archerEnergy;
     }
-    
+
+    /**
+     * @return Int|null
+     */
+    public function getGhostEnergy() : ?Int {
+        return $this->ghostEnergy;
+    }
+
+    /**
+     * @param Int $ghostEnergy
+     */
+    public function setGhostEnergy(Int $ghostEnergy){
+        $this->ghostEnergy = $ghostEnergy;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getMageEnergy(): ?int
+    {
+        return $this->mageEnergy;
+    }
+
+    /**
+     * @param int $mageEnergy
+     */
+    public function setMageEnergy(int $mageEnergy)
+    {
+        $this->mageEnergy = $mageEnergy;
+    }
+
     /**
      * @param Int $itemId|null
      * @return Int
      */
     public function getBardEnergyCost(Int $itemId = null) : Int {
-    	$energyCost = null;
-    	switch($itemId){
-    		case ItemIds::SUGAR:
-    		$energyCost = 20;
-    		break;
-    		case ItemIds::IRON_INGOT:
-    		$energyCost = 30;
-    		break;
-    		case ItemIds::BLAZE_POWDER:
-    		$energyCost = 40;
-    		break;
-    		case ItemIds::GHAST_TEAR:
-    		$energyCost = 35;
-    		break;
-    		case ItemIds::FEATHER:
-    		$energyCost = 30;
-    		break;
-    		case ItemIds::DYE:
-    		$energyCost = 30;
-    		break;
-    		case ItemIds::MAGMA_CREAM:
-    		$energyCost = 25;
-    		break;
-    		case ItemIds::SPIDER_EYE:
-    		$energyCost = 40;
-    		break;
-    	}
-    	return $energyCost;
+        $energyCost = null;
+        switch($itemId){
+            case ItemIds::SUGAR:
+                $energyCost = 20;
+                break;
+            case ItemIds::IRON_INGOT:
+                $energyCost = 30;
+                break;
+            case ItemIds::BLAZE_POWDER:
+                $energyCost = 40;
+                break;
+            case ItemIds::GHAST_TEAR:
+                $energyCost = 35;
+                break;
+            case ItemIds::FEATHER:
+                $energyCost = 30;
+                break;
+            case ItemIds::DYE:
+                $energyCost = 30;
+                break;
+            case ItemIds::MAGMA_CREAM:
+                $energyCost = 25;
+                break;
+            case ItemIds::SPIDER_EYE:
+                $energyCost = 40;
+                break;
+        }
+        return $energyCost;
+    }
+
+    /**
+     * @param Int $itemId|null
+     * @return Int
+     */
+    public function getGhostEnergyCost(Int $itemId = null) : Int {
+        $energyCost = null;
+        switch($itemId){
+            case ItemIds::SUGAR:
+                $energyCost = 20;
+                break;
+            case ItemIds::IRON_INGOT:
+                $energyCost = 30;
+                break;
+            case ItemIds::BLAZE_POWDER:
+                $energyCost = 40;
+                break;
+            case ItemIds::GHAST_TEAR:
+                $energyCost = 35;
+                break;
+            case ItemIds::FEATHER:
+                $energyCost = 30;
+                break;
+            case ItemIds::DYE:
+                $energyCost = 30;
+                break;
+            case ItemIds::MAGMA_CREAM:
+                $energyCost = 25;
+                break;
+            case ItemIds::SPIDER_EYE:
+                $energyCost = 40;
+                break;
+        }
+        return $energyCost;
+    }
+
+    /**
+     * @param int|null $itemId
+     * @return int|null
+     */
+    public function getMageEnergyCost(int $itemId = null): ?int
+    {
+        $energyCost = null;
+
+        switch ($itemId) {
+            case ItemIds::SEEDS:
+                $energyCost = 35;
+                break;
+            case ItemIds::COAL:
+                $energyCost = 25;
+                break;
+            case ItemIds::SPIDER_EYE:
+                $energyCost = 40;
+                break;
+            case ItemIds::ROTTEN_FLESH:
+                $energyCost = 40;
+                break;
+            case ItemIds::GOLD_NUGGET:
+                $energyCost = 35;
+                break;
+            case ItemIds::DYE:
+                $energyCost = 30;
+                break;
+        }
+        return $energyCost;
     }
 
     /**
@@ -261,19 +450,19 @@ class Player extends \pocketmine\Player {
     public function setCombatTag(bool $combatTag){
         $this->combatTag = $combatTag;
     }
-    
+
     /**
      * @param Int $combatTagTime
      */
     public function setCombatTagTime(Int $combatTagTime){
-    	$this->combatTagTime = $combatTagTime;
+        $this->combatTagTime = $combatTagTime;
     }
-    
+
     /**
      * @return Int
      */
     public function getCombatTagTime() : Int {
-    	return $this->combatTagTime;
+        return $this->combatTagTime;
     }
 
     /**
@@ -282,26 +471,26 @@ class Player extends \pocketmine\Player {
     public function isEnderPearl() : bool {
         return $this->enderPearl;
     }
-    
+
     /**
      * @param bool $enderPearl
      */
     public function setEnderPearl(bool $enderPearl){
         $this->enderPearl = $enderPearl;
     }
-    
+
     /**
      * @param Int $enderPearlTime
      */
     public function setEnderPearlTime(Int $enderPearlTime){
-    	$this->enderPearlTime = $enderPearlTime;
+        $this->enderPearlTime = $enderPearlTime;
     }
-    
+
     /**
      * @return Int
      */
     public function getEnderPearlTime() : Int {
-    	return $this->enderPearlTime;
+        return $this->enderPearlTime;
     }
 
     /**
@@ -310,26 +499,26 @@ class Player extends \pocketmine\Player {
     public function isStormBreaker() : bool {
         return $this->stormBreaker;
     }
-    
+
     /**
      * @param bool $stormBreaker
      */
     public function setStormBreaker(bool $stormBreaker){
         $this->stormBreaker = $stormBreaker;
     }
-    
+
     /**
      * @param Int $stormBreakerTime
      */
     public function setStormBreakerTime(Int $stormBreakerTime){
-    	$this->stormBreakerTime = $stormBreakerTime;
+        $this->stormBreakerTime = $stormBreakerTime;
     }
-    
+
     /**
      * @return Int
      */
     public function getStormBreakerTime() : Int {
-    	return $this->stormBreakerTime;
+        return $this->stormBreakerTime;
     }
 
     /**
@@ -352,54 +541,82 @@ class Player extends \pocketmine\Player {
     public function isAntiTrapper() : bool {
         return $this->antiTrapper;
     }
-    
+
     /**
      * @param bool $antiTrapper
      */
     public function setAntiTrapper(bool $antiTrapper){
         $this->antiTrapper = $antiTrapper;
     }
-    
+
     /**
      * @param Int $antiTrapperTime
      */
     public function setAntiTrapperTime(Int $antiTrapperTime){
-    	$this->antiTrapperTime = $antiTrapperTime;
+        $this->antiTrapperTime = $antiTrapperTime;
     }
-    
+
     /**
      * @return Int
      */
     public function getAntiTrapperTime() : Int {
-    	return $this->antiTrapperTime;
+        return $this->antiTrapperTime;
     }
-    
+
     /**
      * @return bool
      */
     public function isArcherTag() : bool {
-    	return $this->archerTag;
+        return $this->archerTag;
     }
-    
+
     /**
      * @param bool $archerTag
      */
     public function setArcherTag(bool $archerTag){
-    	$this->archerTag = $archerTag;
+        $this->archerTag = $archerTag;
     }
-    
+
     /**
      * @param Int $archerTagTime
      */
     public function setArcherTagTime(Int $archerTagTime){
-    	$this->archerTagTime = $archerTagTime;
+        $this->archerTagTime = $archerTagTime;
     }
-    
+
     /**
      * @return Int
      */
     public function getArcherTagTime() : Int {
-    	return $this->archerTagTime;
+        return $this->archerTagTime;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isGhostTag() : bool {
+        return $this->ghostTag;
+    }
+
+    /**
+     * @param bool $ghostTag
+     */
+    public function setGhostTag(bool $ghostTag){
+        $this->ghostTag = $ghostTag;
+    }
+
+    /**
+     * @param Int $ghostTagTime
+     */
+    public function setghostTagTime(Int $ghostTagTime){
+        $this->ghostTagTime = $ghostTagTime;
+    }
+
+    /**
+     * @return Int
+     */
+    public function getGhostTagTime() : Int {
+        return $this->ghostTagTime;
     }
 
     /**
@@ -485,33 +702,215 @@ class Player extends \pocketmine\Player {
     public function getPotionCounterTime() : Int {
         return $this->potionCounterTime;
     }
-    
+
+    /**
+     * @return bool
+     */
+    public function isRareBrick() : bool {
+        return $this->rareBrick;
+    }
+
+    /**
+     * @param bool $rareBrick
+     */
+    public function setRareBrick(bool $rareBrick){
+        $this->rareBrick = $rareBrick;
+    }
+
+    /**
+     * @param Int $rareBrickTime
+     */
+    public function setRareBrickTime(Int $rareBrickTime){
+        $this->rareBrickTime = $rareBrickTime;
+    }
+
+    /**
+     * @return Int
+     */
+    public function getRareBrickTime() : Int {
+        return $this->rareBrickTime;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isLoggerBait() : bool {
+        return $this->loggerBait;
+    }
+
+    /**
+     * @param bool $loggerBait
+     */
+    public function setLoggerBait(bool $loggerBait){
+        $this->loggerBait = $loggerBait;
+    }
+
+    /**
+     * @param Int $loggerBaitTime
+     */
+    public function setLoggerBaitTime(Int $loggerBait){
+        $this->loggerBaitTime = $loggerBait;
+    }
+
+    /**
+     * @return Int
+     */
+    public function getLoggerBaitTime() : Int {
+        return $this->loggerBaitTime;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isNinjaShear() : bool {
+        return $this->ninjaShear;
+    }
+
+    /**
+     * @param bool $ninjaShear
+     */
+    public function setNinjaShear(bool $ninjaShear){
+        $this->ninjaShear = $ninjaShear;
+    }
+
+    /**
+     * @param Int $ninjaShearTime
+     */
+    public function setNinjaShearTime(Int $ninjaShearTime){
+        $this->ninjaShearTime = $ninjaShearTime;
+    }
+
+    /**
+     * @return Int
+     */
+    public function getNinjaShearTime() : Int {
+        return $this->ninjaShearTime;
+    }
+
+    /**
+     * @param Vector3 $ninjaPosition
+     */
+    public function setNinjaShearPosition(?Vector3 $ninjaPosition){
+        $this->ninjaPosition = $ninjaPosition;
+    }
+
+    /**
+     * @return Vector3
+     */
+    public function getNinjaShearPosition() : ?Vector3 {
+        return $this->ninjaPosition;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isPrePearl() : bool {
+        return $this->prePearl;
+    }
+
+    /**
+     * @param bool $prePearl
+     */
+    public function setPrePearl(bool $prePearl){
+        $this->prePearl = $prePearl;
+    }
+
+    /**
+     * @param Vector3 $prePearlPosition
+     */
+    public function setPrePearlPosition(?Vector3 $prePearlPosition){
+        $this->prePearlPosition = $prePearlPosition;
+    }
+
+    /**
+     * @return Vector3
+     */
+    public function getPrePearlPosition() : ?Vector3 {
+        return $this->prePearlPosition;
+    }
+
     /**
      * @return bool
      */
     public function isGoldenGapple() : bool {
-    	return $this->goldenApple;
+        return $this->goldenApple;
     }
-    
+
     /**
      * @param bool $goldenApple
      */
     public function setGoldenApple(bool $goldenApple){
-    	$this->goldenApple = $goldenApple;
+        $this->goldenApple = $goldenApple;
     }
-    
+
     /**
      * @param Int $goldenAppleTime
      */
     public function setGoldenAppleTime(Int $goldenAppleTime){
-    	$this->goldenAppleTime = $goldenAppleTime;
+        $this->goldenAppleTime = $goldenAppleTime;
     }
-    
+
     /**
      * @return Int
      */
     public function getGoldenAppleTime() : Int {
-    	return $this->goldenAppleTime;
+        return $this->goldenAppleTime;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isBackStap() : bool {
+        return $this->backstap;
+    }
+
+    /**
+     * @param bool $backstap
+     */
+    public function setBackstap(bool $backstap){
+        $this->backstap = $backstap;
+    }
+
+    /**
+     * @param Int $backstapTime
+     */
+    public function setBackstapTime(Int $backstapTime){
+        $this->backstapTime = $backstapTime;
+    }
+
+    /**
+     * @return Int
+     */
+    public function getBackstapTime() : Int {
+        return $this->backstapTime;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isSecondChance() : bool {
+        return $this->secondChance;
+    }
+
+    /**
+     * @param bool $secondChance
+     */
+    public function setSecondChance(bool $secondChance){
+        $this->secondChance = $secondChance;
+    }
+
+    /**
+     * @param Int $secondChanceTime
+     */
+    public function setSecondChanceTime(Int $secondChanceTime){
+        $this->secondChanceTime = $secondChanceTime;
+    }
+
+    /**
+     * @return Int
+     */
+    public function getSecondChanceTime() : Int {
+        return $this->secondChanceTime;
     }
 
     /**
@@ -555,7 +954,7 @@ class Player extends \pocketmine\Player {
     public function getTeleportingHomeTime() : Int {
         return $this->teleportHomeTime;
     }
-    
+
     /**
      * @return bool
      */
@@ -583,7 +982,7 @@ class Player extends \pocketmine\Player {
     public function getLogoutTime() : Int {
         return $this->logoutTime;
     }
-    
+
     /**
      * @return bool
      */
@@ -611,47 +1010,47 @@ class Player extends \pocketmine\Player {
     public function getTeleportingStuckTime() : Int {
         return $this->teleportStuckTime;
     }
-    
+
     /**
      * @return bool
      */
     public function isInvincibility() : bool {
-    	return $this->invincibility;
+        return $this->invincibility;
     }
-    
+
     /**
      * @param bool $invincibility
      */
     public function setInvincibility(bool $invincibility){
-    	$this->invincibility = $invincibility;
+        $this->invincibility = $invincibility;
     }
-    
+
     /**
      * @param Int $invincibilityTime
      */
     public function setInvincibilityTime(Int $invincibilityTime){
-    	$this->invincibilityTime = $invincibilityTime;
+        $this->invincibilityTime = $invincibilityTime;
     }
-    
+
     /**
      * @return Int
      */
     public function getInvincibilityTime() : Int {
-    	return $this->invincibilityTime;
+        return $this->invincibilityTime;
     }
 
     /**
      * @return bool
      */
     public function isViewingMap() : bool {
-    	return $this->viewingMap;
+        return $this->viewingMap;
     }
-    
+
     /**
      * @param bool $viewingMap
      */
     public function setViewingMap(bool $viewingMap){
-    	$this->viewingMap = $viewingMap;
+        $this->viewingMap = $viewingMap;
     }
 
     /**
@@ -681,20 +1080,20 @@ class Player extends \pocketmine\Player {
     public function setInteract(bool $canInteract){
         $this->canInteract = $canInteract;
     }
-    
+
     /**
      * @return void
      */
     public function addTool() : void {
-    	$item = Item::get(ItemIds::DIAMOND_HOE, 0, 1)->setCustomName(TE::DARK_PURPLE."Claim Tool")->setLore([TE::GRAY."Touch First Position, Touch Second Position!"]);
-		$this->getInventory()->addItem($item);
+        $item = Item::get(ItemIds::WOODEN_HOE, 0, 1)->setCustomName(TE::GREEN."Claiming Wand")->setLore([TE::GRAY."Touch First Position, Break Second Position!"]);
+        $this->getInventory()->addItem($item);
     }
-    
+
     /**
      * @return void
      */
     public function removeTool() : void {
-    	$this->getInventory()->removeItem(Item::get(ItemIds::DIAMOND_HOE, 0, 1));
+        $this->getInventory()->removeItem(Item::get(ItemIds::WOODEN_HOE, 0, 1));
     }
 
     /**
@@ -738,19 +1137,19 @@ class Player extends \pocketmine\Player {
     public function setInvite(bool $invitation){
         $this->invitation = $invitation;
     }
-    
+
     /**
      * @return String
      */
     public function getCurrentInvite() : String {
-    	return $this->currentInvite;
+        return $this->currentInvite;
     }
-    
+
     /**
      * @param String $currentInvite
      */
     public function setCurrentInvite(String $currentInvite){
-    	$this->currentInvite = $currentInvite;
+        $this->currentInvite = $currentInvite;
     }
 
     /**
@@ -785,34 +1184,34 @@ class Player extends \pocketmine\Player {
      * @return String
      */
     public function getRegion() : String {
-    	return $this->currentRegion === null ? "Unknown" : $this->currentRegion;
+        return $this->currentRegion === null ? "Unknown" : $this->currentRegion;
     }
-    
+
     /**
      * @param String $currentRegion
      */
     public function setRegion(String $currentRegion){
-    	$this->currentRegion = $currentRegion;
+        $this->currentRegion = $currentRegion;
     }
-    
+
     /**
      * @return String
      */
     public function getCurrentRegion() : String {
-    	if(Factions::isSpawnRegion($this)){
-    		return "Spawn";
-    	}else{
-    		return Factions::getRegionName($this) ?? "Wilderness";
-    	}
+        if(Factions::isSpawnRegion($this)){
+            return "Spawn";
+        }else{
+            return Factions::getRegionName($this) ?? "Wilderness";
+        }
     }
-    
+
     /**
      * @return Int
      */
     public function getLives() : Int {
         return PlayerBase::getData($this->getName())->get("lives") === null ? 0 : PlayerBase::getData($this->getName())->get("lives");
     }
-    
+
     /**
      * @param Int $lives
      */
@@ -838,16 +1237,16 @@ class Player extends \pocketmine\Player {
      * @return Int
      */
     public function getBalance() : Int {
-    	return PlayerBase::getData($this->getName())->get("balance") === null ? 0 : PlayerBase::getData($this->getName())->get("balance");
+        return PlayerBase::getData($this->getName())->get("balance") === null ? 0 : PlayerBase::getData($this->getName())->get("balance");
     }
 
     /**
      * @param Int $balance
      */
     public function setBalance(Int $balance){
-    	PlayerBase::setData($this->getName(), "balance", $balance);
+        PlayerBase::setData($this->getName(), "balance", $balance);
     }
-    
+
 
     /**
      * @param Int $balance
@@ -883,12 +1282,12 @@ class Player extends \pocketmine\Player {
     public function reduceKills(Int $kills = 1){
         PlayerBase::setData($this->getName(), "kills", $this->getKills() - $kills);
     }
-    
+
     /**
      * @param Int $kills
      */
     public function addKills(Int $kills = 1){
-    	PlayerBase::setData($this->getName(), "kills", $this->getKills() + $kills);
+        PlayerBase::setData($this->getName(), "kills", $this->getKills() + $kills);
     }
 
     /**
@@ -945,46 +1344,88 @@ class Player extends \pocketmine\Player {
      * @return void
      */
     public function resetKothHostTime() : void {
-        PlayerBase::setData($this->getName(), "koth_host", $this->getRank() === "Bull" ? time() + (2 * 3600) : time() + (3 * 3600));
+        PlayerBase::setData($this->getName(), "koth_host", $this->getRank() === "Nebula" ? time() + (2 * 3600) : time() + (3 * 3600));
     }
-    
+
+    /**
+     * @return Int
+     */
+    public function getCitadelHostTimeRemaining() : Int {
+        return PlayerBase::getData($this->getName())->get("citadel_host");
+    }
+
+    /**
+     * @return void
+     */
+    public function resetCitadelHostTime() : void {
+        PlayerBase::setData($this->getName(), "citadel_host", $this->getRank() === "Knigth" ? time() + (2 * 3600) : time() + (3 * 3600));
+    }
+
     /**
      * @return bool
      */
     public function isBardClass() : bool {
-    	if(!$this->isOnline()) return false;
-		if($this->getArmorInventory()->getHelmet()->getId() === ItemIds::GOLD_HELMET && $this->getArmorInventory()->getChestplate()->getId() === ItemIds::GOLD_CHESTPLATE && $this->getArmorInventory()->getLeggings()->getId() === ItemIds::GOLD_LEGGINGS && $this->getArmorInventory()->getBoots()->getId() === ItemIds::GOLD_BOOTS){
-			return true;
-		}else{
-			return false;
-		}
-		return false;
+        if(!$this->isOnline()) return false;
+        if($this->getArmorInventory()->getHelmet()->getId() === ItemIds::GOLD_HELMET && $this->getArmorInventory()->getChestplate()->getId() === ItemIds::GOLD_CHESTPLATE && $this->getArmorInventory()->getLeggings()->getId() === ItemIds::GOLD_LEGGINGS && $this->getArmorInventory()->getBoots()->getId() === ItemIds::GOLD_BOOTS){
+            return true;
+        }else{
+            return false;
+        }
+        return false;
     }
-    
+
+    /**
+     * @return bool
+     */
+    public function isMageClass(): bool
+    {
+        if (!$this->isOnline())
+            return false;
+
+        if ($this->getArmorInventory()->getHelmet()->getId() === ItemIds::GOLD_HELMET && $this->getArmorInventory()->getChestplate()->getId() === ItemIds::CHAINMAIL_CHESTPLATE && $this->getArmorInventory()->getLeggings()->getId() === ItemIds::CHAINMAIL_LEGGINGS && $this->getArmorInventory()->getBoots()->getId() === ItemIds::GOLD_BOOTS) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isGhostClass(): bool
+    {
+        if (!$this->isOnline())
+            return false;
+
+        if ($this->getArmorInventory()->getHelmet()->getId() === ItemIds::LEATHER_HELMET && $this->getArmorInventory()->getChestplate()->getId() === ItemIds::GOLD_CHESTPLATE && $this->getArmorInventory()->getLeggings()->getId() === ItemIds::GOLD_LEGGINGS && $this->getArmorInventory()->getBoots()->getId() === ItemIds::LEATHER_BOOTS) {
+            return true;
+        }
+        return false;
+    }
+
     /**
      * @return bool
      */
     public function isArcherClass() : bool {
-    	if(!$this->isOnline()) return false;
-		if($this->getArmorInventory()->getHelmet()->getId() === ItemIds::LEATHER_HELMET && $this->getArmorInventory()->getChestplate()->getId() === ItemIds::LEATHER_CHESTPLATE && $this->getArmorInventory()->getLeggings()->getId() === ItemIds::LEATHER_LEGGINGS && $this->getArmorInventory()->getBoots()->getId() === ItemIds::LEATHER_BOOTS){
-			return true;
-		}else{
-			return false;
-		}
-		return false;
+        if(!$this->isOnline()) return false;
+        if($this->getArmorInventory()->getHelmet()->getId() === ItemIds::LEATHER_HELMET && $this->getArmorInventory()->getChestplate()->getId() === ItemIds::LEATHER_CHESTPLATE && $this->getArmorInventory()->getLeggings()->getId() === ItemIds::LEATHER_LEGGINGS && $this->getArmorInventory()->getBoots()->getId() === ItemIds::LEATHER_BOOTS){
+            return true;
+        }else{
+            return false;
+        }
+        return false;
     }
-    
+
     /**
      * @return bool
      */
     public function isMinerClass() : bool {
-    	if(!$this->isOnline()) return false;
-		if($this->getArmorInventory()->getHelmet()->getId() === ItemIds::IRON_HELMET && $this->getArmorInventory()->getChestplate()->getId() === ItemIds::IRON_CHESTPLATE && $this->getArmorInventory()->getLeggings()->getId() === ItemIds::IRON_LEGGINGS && $this->getArmorInventory()->getBoots()->getId() === ItemIds::IRON_BOOTS){
-			return true;
-		}else{
-			return false;
-		}
-		return false;
+        if(!$this->isOnline()) return false;
+        if($this->getArmorInventory()->getHelmet()->getId() === ItemIds::IRON_HELMET && $this->getArmorInventory()->getChestplate()->getId() === ItemIds::IRON_CHESTPLATE && $this->getArmorInventory()->getLeggings()->getId() === ItemIds::IRON_LEGGINGS && $this->getArmorInventory()->getBoots()->getId() === ItemIds::IRON_BOOTS){
+            return true;
+        }else{
+            return false;
+        }
+        return false;
     }
 
     /**
@@ -992,14 +1433,14 @@ class Player extends \pocketmine\Player {
      */
     public function isRogueClass() : bool {
         if(!$this->isOnline()) return false;
-		if($this->getArmorInventory()->getHelmet()->getId() === ItemIds::CHAINMAIL_HELMET && $this->getArmorInventory()->getChestplate()->getId() === ItemIds::CHAINMAIL_CHESTPLATE && $this->getArmorInventory()->getLeggings()->getId() === ItemIds::CHAINMAIL_LEGGINGS && $this->getArmorInventory()->getBoots()->getId() === ItemIds::CHAINMAIL_BOOTS){
-			return true;
-		}else{
-			return false;
-		}
-		return false;
+        if($this->getArmorInventory()->getHelmet()->getId() === ItemIds::CHAINMAIL_HELMET && $this->getArmorInventory()->getChestplate()->getId() === ItemIds::CHAINMAIL_CHESTPLATE && $this->getArmorInventory()->getLeggings()->getId() === ItemIds::CHAINMAIL_LEGGINGS && $this->getArmorInventory()->getBoots()->getId() === ItemIds::CHAINMAIL_BOOTS){
+            return true;
+        }else{
+            return false;
+        }
+        return false;
     }
-    
+
     /**
      * @return void
      */
@@ -1011,7 +1452,7 @@ class Player extends \pocketmine\Player {
             $this->addEffect(new EffectInstance(Effect::getEffect(Effect::SPEED), 240, 1));
             $this->addEffect(new EffectInstance(Effect::getEffect(Effect::REGENERATION), 240, 1));
         }elseif($this->isArcherClass()){
-        	if(!isset($this->armorEffects[$this->getName()]["Archer"])){
+            if(!isset($this->armorEffects[$this->getName()]["Archer"])){
                 $this->armorEffects[$this->getName()]["Archer"] = $this;
             }
             $this->addEffect(new EffectInstance(Effect::getEffect(Effect::FIRE_RESISTANCE), 240, 1));
@@ -1025,8 +1466,24 @@ class Player extends \pocketmine\Player {
             $this->addEffect(new EffectInstance(Effect::getEffect(Effect::DAMAGE_RESISTANCE), 240, 1));
             $this->addEffect(new EffectInstance(Effect::getEffect(Effect::SPEED), 240, 2));
             $this->addEffect(new EffectInstance(Effect::getEffect(Effect::JUMP_BOOST), 240, 0));
+        }elseif($this->isMageClass()) {
+            // TODO:
+            if(!isset($this->playerClass[$this->getName()]["Mage"])){
+                $this->playerClass[$this->getName()]["Mage"] = $this;
+            }
+            $this->addEffect(new EffectInstance(Effect::getEffect(Effect::RESISTANCE), 240, 1));
+            $this->addEffect(new EffectInstance(Effect::getEffect(Effect::REGENERATION), 240, 1));
+            $this->addEffect(new EffectInstance(Effect::getEffect(Effect::SPEED), 240, 2));
+        }elseif($this->isGhostClass()) {
+            // TODO:
+            if(!isset($this->playerClass[$this->getName()]["Ghost"])){
+                $this->playerClass[$this->getName()]["Ghost"] = $this;
+            }
+            $this->addEffect(new EffectInstance(Effect::getEffect(Effect::RESISTANCE), 240, 3));
+            $this->addEffect(new EffectInstance(Effect::getEffect(Effect::INVISIBILITY), 240, 1));
+            $this->addEffect(new EffectInstance(Effect::getEffect(Effect::SPEED), 240, 2));
         }elseif($this->isMinerClass()){
-        	if(!isset($this->armorEffects[$this->getName()]["Miner"])){
+            if(!isset($this->armorEffects[$this->getName()]["Miner"])){
                 $this->armorEffects[$this->getName()]["Miner"] = $this;
             }
             $this->addEffect(new EffectInstance(Effect::getEffect(Effect::NIGHT_VISION), 240, 1));
@@ -1036,24 +1493,24 @@ class Player extends \pocketmine\Player {
                 $this->addEffect(new EffectInstance(Effect::getEffect(Effect::INVISIBILITY), 240, 1));
             }
         }else{
-        	if(isset($this->armorEffects[$this->getName()]["Bard"])){
-        		$this->removeEffect(Effect::SPEED);
+            if(isset($this->armorEffects[$this->getName()]["Bard"])){
+                $this->removeEffect(Effect::SPEED);
                 $this->removeEffect(Effect::REGENERATION);
-        		unset($this->armorEffects[$this->getName()]["Bard"]);
-        	}
-        	if(isset($this->armorEffects[$this->getName()]["Archer"])){
-        		$this->removeEffect(Effect::SPEED);
+                unset($this->armorEffects[$this->getName()]["Bard"]);
+            }
+            if(isset($this->armorEffects[$this->getName()]["Archer"])){
+                $this->removeEffect(Effect::SPEED);
                 $this->removeEffect(Effect::REGENERATION);
                 $this->removeEffect(Effect::FIRE_RESISTANCE);
-        		unset($this->armorEffects[$this->getName()]["Archer"]);
+                unset($this->armorEffects[$this->getName()]["Archer"]);
             }
             if(isset($this->armorEffects[$this->getName()]["Rogue"])){
-        		$this->removeEffect(Effect::SPEED);
+                $this->removeEffect(Effect::SPEED);
                 $this->removeEffect(Effect::REGENERATION);
                 $this->removeEffect(Effect::FIRE_RESISTANCE);
-        		unset($this->armorEffects[$this->getName()]["Rogue"]);
-        	}
-        	if(isset($this->armorEffects[$this->getName()]["Miner"])){
+                unset($this->armorEffects[$this->getName()]["Rogue"]);
+            }
+            if(isset($this->armorEffects[$this->getName()]["Miner"])){
                 $this->removeEffect(Effect::HASTE);
                 $this->removeEffect(Effect::NIGHT_VISION);
                 $this->removeEffect(Effect::FIRE_RESISTANCE);
@@ -1063,9 +1520,9 @@ class Player extends \pocketmine\Player {
     }
 
     /**
-	 * @return void
-	 */
-	public function changeWorld() : void {
+     * @return void
+     */
+    public function changeWorld() : void {
         $levelName = Loader::getDefaultConfig("LevelManager")["levelEndName"];
         if(!Loader::getInstance()->getServer()->isLevelGenerated($levelName)){
             $this->sendMessage(TE::RED.$levelName." does not exist, you must talk to the developer or owner to fix this!");
@@ -1109,25 +1566,133 @@ class Player extends \pocketmine\Player {
     /**
      * @return void
      */
-    public function showCoordinates() : void {
-        $pk = new GameRulesChangedPacket();
-        $pk->gameRules = ["showcoordinates" => [1, true, false]];
-        $this->dataPacket($pk);
-    }
-    
-    /**
-     * @return String
-     */
-    public function getCountry() : String {
-    	$ip = $this->getAddress();
-		$http = file_get_contents('http://www.geoplugin.net/json.gp?ip='.$ip);
-		$handle = json_decode($http);
-		return $handle->geoplugin_countryName;
+    public function addPermissionsPlayer() : void {
+        $permission = Loader::getInstance()->getPermission($this);
+        if($this->getRank() === "Guest"){
+            $file = Loader::getConfiguration("permissions");
+            foreach($file->get($this->getRank()) as $permissions){
+                $permission->setPermission($permissions, true);
+            }
+        }
+        if($this->getRank() === "Sr-Admin"){
+            $file = Loader::getConfiguration("permissions");
+            foreach($file->get($this->getRank()) as $permissions){
+                $permission->setPermission($permissions, true);
+            }
+        }
+        if($this->getRank() === "Admin"){
+            $file = Loader::getConfiguration("permissions");
+            foreach($file->get($this->getRank()) as $permissions){
+                $permission->setPermission($permissions, true);
+            }
+        }
+        if($this->getRank() === "Jr-Admin"){
+            $file = Loader::getConfiguration("permissions");
+            foreach($file->get($this->getRank()) as $permissions){
+                $permission->setPermission($permissions, true);
+            }
+        }
+        if($this->getRank() === "Sr-Mod"){
+            $file = Loader::getConfiguration("permissions");
+            foreach($file->get($this->getRank()) as $permissions){
+                $permission->setPermission($permissions, true);
+            }
+        }
+        if($this->getRank() === "Mod"){
+            $file = Loader::getConfiguration("permissions");
+            foreach($file->get($this->getRank()) as $permissions){
+                $permission->setPermission($permissions, true);
+            }
+        }
+        if($this->getRank() === "Trainee"){
+            $file = Loader::getConfiguration("permissions");
+            foreach($file->get($this->getRank()) as $permissions){
+                $permission->setPermission($permissions, true);
+            }
+        }
+        if($this->getRank() === "Predator"){
+            $file = Loader::getConfiguration("permissions");
+            foreach($file->get($this->getRank()) as $permissions){
+                $permission->setPermission($permissions, true);
+            }
+        }
+        if($this->getRank() === "Hero"){
+            $file = Loader::getConfiguration("permissions");
+            foreach($file->get($this->getRank()) as $permissions){
+                $permission->setPermission($permissions, true);
+            }
+        }
+        if($this->getRank() === "Wraith"){
+            $file = Loader::getConfiguration("permissions");
+            foreach($file->get($this->getRank()) as $permissions){
+                $permission->setPermission($permissions, true);
+            }
+        }
+        if($this->getRank() === "NitroBooster"){
+            $file = Loader::getConfiguration("permissions");
+            foreach($file->get($this->getRank()) as $permissions){
+                $permission->setPermission($permissions, true);
+            }
+        }
+        if($this->getRank() === "Nebula"){
+            $file = Loader::getConfiguration("permissions");
+            foreach($file->get($this->getRank()) as $permissions){
+                $permission->setPermission($permissions, true);
+            }
+        }
+        if($this->getRank() === "Knight"){
+            $file = Loader::getConfiguration("permissions");
+            foreach($file->get($this->getRank()) as $permissions){
+                $permission->setPermission($permissions, true);
+            }
+        }
+        if($this->getRank() === "MiniYT"){
+            $file = Loader::getConfiguration("permissions");
+            foreach($file->get($this->getRank()) as $permissions){
+                $permission->setPermission($permissions, true);
+            }
+        }
+        if($this->getRank() === "Twitch"){
+            $file = Loader::getConfiguration("permissions");
+            foreach($file->get($this->getRank()) as $permissions){
+                $permission->setPermission($permissions, true);
+            }
+        }
+        if($this->getRank() === "YouTuber"){
+            $file = Loader::getConfiguration("permissions");
+            foreach($file->get($this->getRank()) as $permissions){
+                $permission->setPermission($permissions, true);
+            }
+        }
+        if($this->getRank() === "Famous"){
+            $file = Loader::getConfiguration("permissions");
+            foreach($file->get($this->getRank()) as $permissions){
+                $permission->setPermission($permissions, true);
+            }
+        }
+        if($this->getRank() === "Partner"){
+            $file = Loader::getConfiguration("permissions");
+            foreach($file->get($this->getRank()) as $permissions){
+                $permission->setPermission($permissions, true);
+            }
+        }
     }
 
-    public function getRank()
-    {
-        return Loader::getInstance()->getPurePerms()->getUserDataMgr()->getGroup($this);
+
+    /**
+     * @return void
+     */
+    public function removePermissionsPlayer() : void {
+        unset(Loader::getInstance()->permission[$this->getName()]);
+    }
+
+    /**
+     * @return void
+     */
+    public function showCoordinates() : void {
+        $pk = new GameRulesChangedPacket();
+        $pk->gameRules = ["showcoordinates" => [1, "true", true]];
+        $this->dataPacket($pk);
     }
 }
 

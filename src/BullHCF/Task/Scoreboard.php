@@ -9,6 +9,8 @@ use BullHCF\utils\Time;
 
 use BullHCF\koth\KothManager;
 
+use BullHCF\Citadel\CitadelManager;
+
 use BullHCF\listeners\event\{SOTW, EOTW, GiftChest};
 
 use Advanced\Data\PlayerBase;
@@ -36,8 +38,8 @@ class Scoreboard extends Task {
     public function onRun(Int $currentTick) : void {
         $player = $this->player;
         if(!$player->isOnline()){
-        	Loader::getInstance()->getScheduler()->cancelTask($this->getTaskId());
-        	return;
+            Loader::getInstance()->getScheduler()->cancelTask($this->getTaskId());
+            return;
         }
         if(Factions::isSpawnRegion($player)) $player->setFood(20);
 
@@ -66,11 +68,20 @@ class Scoreboard extends Task {
         if($player->isEgg()){
             $scoreboard[] = str_replace(["&", "{time}"], ["§", Time::getTimeToString($player->getEggTime())], $config->get("EggPort"));
         }
+        if($player->isBackStap()){
+            $scoreboard[] = str_replace(["&", "{time}"], ["§", Time::getTimeToString($player->getBackstapTime())], $config->get("Backstap"));
+        }
         if($player->isSpecialItem()){
             $scoreboard[] = str_replace(["&", "{time}"], ["§", Time::getTimeToString($player->getSpecialItemTime())], $config->get("SpecialItem"));
         }
         if($player->isPotionCounter()){
             $scoreboard[] = str_replace(["&", "{time}"], ["§", Time::getTimeToString($player->getPotionCounterTime())], $config->get("PotionCounter"));
+        }
+        if($player->isSecondChance()){
+            $scoreboard[] = str_replace(["&", "{time}"], ["§", Time::getTimeToString($player->getSecondChanceTime())], $config->get("SecondChance"));
+        }
+        if($player->isNinjaShear()){
+            $scoreboard[] = str_replace(["&", "{time}"], ["§", Time::getTimeToString($player->getNinjaShearTime())], $config->get("NinjaShear"));
         }
         if($player->isTeleportingHome()){
             $scoreboard[] = str_replace(["&", "{time}"], ["§", Time::getTimeToString($player->getTeleportingHomeTime())], $config->get("Home"));
@@ -79,23 +90,42 @@ class Scoreboard extends Task {
             $scoreboard[] = str_replace(["&", "{time}"], ["§", Time::getTimeToString($player->getTeleportingStuckTime())], $config->get("Stuck"));
         }
         if(($kothName = KothManager::kothIsEnabled())){
-        	$koth = KothManager::getKoth($kothName);
+            $koth = KothManager::getKoth($kothName);
             $scoreboard[] = str_replace(["&", "{kothName}", "{time}"], ["§", $koth->getName(), Time::getTimeToString($koth->getKothTime())], $config->get("KOTH"));
         }
+        if(($citadelName = CitadelManager::CitadelIsEnabled())){
+            $citadel = CitadelManager::getCitadel($citadelName);
+            $scoreboard[] = str_replace(["&", "{citadelName}", "{time}"], ["§", $citadel->getName(), Time::getTimeToString($citadel->getCitadelTime())], $config->get("CITADEL"));
+        }
+        if (isset(loader::$rogue[$player->getName()])) {
+            if (loader::$rogue[$player->getName()] - time() < 0) {
+                unset(Loader::$rogue[$player->getName()]);
+            }
+            if (isset(Loader::$rogue[$player->getName()])) {
+                $reaming = Loader::$rogue[$player->getName()] - time();
+                $scoreboard[] = str_replace(["&", "{time}"], ["§", Time::getTimeToString($reaming)], $config["ROGUE_DELAY"]);
+            }
+        }
         if(SOTW::isEnable()){
-        	$scoreboard[] = str_replace(["&", "{time}"], ["§", Time::getTimeToFullString(SOTW::getTime())], $config->get("SOTW"));
+            $scoreboard[] = str_replace(["&", "{time}"], ["§", Time::getTimeToFullString(SOTW::getTime())], $config->get("SOTW"));
         }
         if(EOTW::isEnable()){
-        	$scoreboard[] = str_replace(["&", "{time}"], ["§", Time::getTimeToFullString(EOTW::getTime())], $config->get("EOTW"));
+            $scoreboard[] = str_replace(["&", "{time}"], ["§", Time::getTimeToFullString(EOTW::getTime())], $config->get("EOTW"));
         }
         if($player->isInvincibility()){
-        	$scoreboard[] = str_replace(["&", "{time}"], ["§", Time::getTimeToFullString($player->getInvincibilityTime())], $config->get("Invincibility"));
+            $scoreboard[] = str_replace(["&", "{time}"], ["§", Time::getTimeToFullString($player->getInvincibilityTime())], $config->get("Invincibility"));
         }
         if($player->isBardClass()){
             $scoreboard[] = str_replace(["&", "{bardEnergy}"], ["§", $player->getBardEnergy()], $config->get("BardEnergy"));
         }
         if($player->isArcherClass()){
             $scoreboard[] = str_replace(["&", "{archerEnergy}"], ["§", $player->getArcherEnergy()], $config->get("ArcherEnergy"));
+        }
+        if($player->isGhostClass()){
+            $scoreboard[] = str_replace(["&", "{ghostEnergy}"], ["§", $player->getGhostEnergy()], $config->get("GhostEnergy"));
+        }
+        if($player->isMageClass()){
+            $scoreboard[] = str_replace(["&", "{mageEnergy}"], ["§", $player->getMageEnergy()], $config->get("MageEnergy"));
         }
         if($player->isFocus()){
             if(!Factions::isFactionExists($player->getFocusFaction())) $player->setFocus(false);
@@ -106,10 +136,10 @@ class Scoreboard extends Task {
         if(count($scoreboard) >= 1){
             $scoreboard[] = TE::GRAY."------------------- ";
             $texting = [TE::GRAY.TE::GRAY."------------------- "];
-      	  $scoreboard = array_merge($texting, $scoreboard);
+            $scoreboard = array_merge($texting, $scoreboard);
         }else{
-        	$api->removePrimary($player);
-        	return;
+            $api->removePrimary($player);
+            return;
         }
         $api->newScoreboard($player, $player->getName(), str_replace(["&"], ["§"], $config->get("scoreboard_name")));
         if($api->getObjectiveName($player) !== null){

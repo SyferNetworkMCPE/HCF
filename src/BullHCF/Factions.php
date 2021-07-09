@@ -19,8 +19,7 @@ use pocketmine\network\mcpe\protocol\BlockActorDataPacket;
 use pocketmine\network\mcpe\protocol\UpdateBlockPacket;
 
 class Factions {
-
-    const FACTION = "Faction", SPAWN = "Spawn", PROTECTION = "Protection", KOTH = "Koth";
+    const FACTION = "Faction", SPAWN = "Spawn", PROTECTION = "Protection", KOTH = "Koth", CITADEL = "citadel";
 
     /**
      * @return void

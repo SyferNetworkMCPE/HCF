@@ -5,8 +5,8 @@ namespace BullHCF\commands;
 use BullHCF\Loader;
 use BullHCF\player\Player;
 
-use BullHCF\commands\moderation\{KitCommand, PexCommand, RoollbackCommand, GlobalEffects, TpaCommand, CrateCommand, GodCommand, SpecialItemsCommand, SpawnCommand, ClearEntitysCommand, EnchantCommand};
-use BullHCF\commands\events\{SOTWCommand, EOTWCommand, KothCommand};
+use BullHCF\commands\moderation\{KitCommand, RoollbackCommand, GlobalEffects, TpaCommand, CrateCommand, GodCommand, SpecialItemsCommand, SpawnCommand, ClearEntitysCommand, EnchantCommand};
+use BullHCF\commands\events\{SOTWCommand, EOTWCommand, KothCommand, CitadelCommand};
 use pocketmine\utils\TextFormat as TE;
 
 class Commands {
@@ -25,6 +25,7 @@ class Commands {
         Loader::getInstance()->getServer()->getCommandMap()->register("/items", new SpecialItemsCommand());
         Loader::getInstance()->getServer()->getCommandMap()->register("/spawn", new SpawnCommand());
         Loader::getInstance()->getServer()->getCommandMap()->register("/enchant", new EnchantCommand());
+        Loader::getInstance()->getServer()->getCommandMap()->register("/citadel", new CitadelCommand());
 
 		Loader::getInstance()->getServer()->getCommandMap()->register("/f", new FactionCommand());
 		Loader::getInstance()->getServer()->getCommandMap()->register("/gkit", new GkitCommand());

@@ -2,6 +2,7 @@
 
 namespace BullHCF\provider;
 
+use BullHCF\Citadel\CitadelBackup;
 use BullHCF\listeners\interact\Shop;
 use BullHCF\Loader;
 use BullHCF\player\Player;
@@ -50,6 +51,7 @@ class YamlProvider {
 			CrateBackup::initAll();
 			ShopBackup::initAll();
 			KothBackup::initAll();
+			CitadelBackup::initAll();
 
 		} catch (\Exception $exception) {
 			Loader::getInstance()->getLogger()->error($exception->getMessage());
@@ -70,6 +72,7 @@ class YamlProvider {
 			CrateBackup::saveAll();
 			ShopBackup::saveAll();
 			KothBackup::saveAll();
+			CitadelBackup::saveAll();
 
 		} catch (\Exception $exception) {
 			Loader::getInstance()->getLogger()->error($exception->getMessage());
