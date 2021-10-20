@@ -1,0 +1,93 @@
+---
+# Scoreboard Configuration
+scoreboard_name: "§d§lSyfer§r§7 | §fBETA-2.0"
+
+# Information: '{time}' takes the value of the remaining time
+CombatTag: "&c&lSpawn Tag&r&f: &c{time} "
+
+EnderPearl: "&3&lEnderPearl&r&f: &c{time} "
+
+Snowball: "&7&lSnowball&r&f: &c{time} "
+
+LoggerBait: "&6&lLoggerBait§r§f: §c{time} "
+
+Refill: "&6&lRefill§r§f: §c{time} "
+
+StormBreaker: "&6&lStormBreaker&r&f: &c{time} "
+
+AntiTrapper: "&6&lAntiTrapper&r&f: &c{time} "
+
+Archer_Mark: "&e&lArcherMark&r&f: &c{time} "
+
+ROGUE_DELAY: "§l§aRogue Delay§r§f: §c{time} "
+
+EggPorts: "&6&lEggPorts&r&f: &c{time} "
+
+ResetItems: "§l§6ResetItems§r§f: §c{time} "
+
+SpecialItem: "&l&dSpecial Item&r&f: &c{time} "
+
+PotionCounter: "&l&6PotionCounter&r&f: &c{time} "
+
+GlobalCooldown: "&l&gGlobal Cooldown&r&f: &c{time} "
+
+BackStap: "&l&eBackStap&r&f: &c{time} "
+
+NinjaShear: "&l&6NinjaShear&r&f: &c{time} "
+
+Camuflaje: "§l§6Camuflaje§r§f: §c{time} "
+
+Apple: "&6&lApple&r&f: &c{time} "
+
+Logout: "&9&lLogout&r&f: &c{time} "
+
+Home: "&9&lHome&r&f: &c{time} "
+
+Stuck: "&4&lStuck&r&f: &c{time} "
+
+SOTW: "&d&lSOTW§r§d ends in&r&f: &c{time} "
+
+KEYALL: "&l&4KEYALL §r§4in§f: §c{time} "
+
+PP: "&l&6PPackage All §r§6in§f: §c{time} "
+
+AIRDROP: "&l&eAirdrop All§r§e in§r§f: §c{time} "
+
+RESTART: "§l§3RESTART§r§3 in§r§f: §c{time} "
+
+RewardChest: "§2RewardChest§r§2 in§r§f: §c{time} "
+
+EVENT: "&l&bEvent Start§r§b in§r§f: §c{time} "
+
+PURGUE: "&l&cPurgue§r§c ends in§r§f: §c{time} "
+
+FFA: "&l&5FFA§r§5 start in§r§f: §c{time} "
+
+EOTW: "&4&lEOTW§r§4 ends in&r&f: &c{time} "
+
+KOTH: "&l&2{kothName}&r&f: &c{time} "
+
+CITADEL: "&l&5{citadelName}&r&f: &c{time} "
+
+Invincibility: "&a&lPvP Timer&r&f: &c{time} "
+
+BardEnergy: "&d&lBardEnergy&r&f: &c{bardEnergy}.0"
+
+OpBardEnergy: "&d&lOPBardEnergy&r&f: &c{opbardEnergy}.0"
+
+ArcherEnergy: "&d&lArcherEnergy&r&f: &c{archerEnergy}.0"
+
+OpMageEnergy: "&d&lOpMageEnergy&r&f: &c{opmageEnergy}.0"
+
+OpArcherEnergy: "&d&lOpArcherEnergy&r&f: &c{oparcherEnergy}.0"
+
+MageEnergy: "&d&lMageEnergy&r&f: &c{mageEnergy}.0"
+
+# These texts are displayed if the player focused on any faction
+factionFocus: [ 
+  " ",
+  "&l&5Team&r&f: &d{factionName} ", 
+  "&l&5HQ&r&f: &d{factionHome} ", 
+  "&l&5DTR&r&f: &d{factionDTR}&e■ ", 
+  "&l&5Online&r&f: &d{factionOnlinePlayers} ", 
+]
