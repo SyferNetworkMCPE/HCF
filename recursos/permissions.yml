@@ -1,0 +1,2389 @@
+---
+# PERMISSIONS THE SyferHCF
+
+# RANKS STAFF's
+
+Owner: [
+  "*",
+  "free.kit.use",
+]
+
+Owner_666: [
+   "*",
+   "free.kit.use",
+] 
+   
+Owner_COL: [
+   "*",
+   "free.kit.use",
+] 
+
+Owner_MEX: [
+   "*",
+   "free.kit.use",
+]
+
+Owner_ESP: [
+   "*",
+   "free.kit.use",
+]
+
+Owner_ARG: [
+   "*",
+   "free.kit.use",
+]
+
+Co-Owner: [
+  "*",
+]
+
+Co-Owner_COL: [
+  "*",
+]
+
+Co-Owner_MEX: [
+  "*",
+]
+
+Co-Owner_ESP: [
+  "*",
+]
+
+Co-Owner_ARG: [
+  "*",
+]
+
+Developer: [
+  "*",
+]
+
+Developer_COL: [
+  "*",
+]
+
+Developer_MEX: [
+  "*",
+]
+
+Developer_ESP: [
+  "*",
+]
+
+Developer_ARG: [
+  "*",
+]
+
+PlataformAdmin: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "clearinv.command.use",
+  "location.command.use",
+  "history.command.use",
+  "co.command.use",
+  "kick.command.use",
+  "crgive.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  "refys+.kit.use",
+  
+  "fixall.command.use",
+  "rb.command.use",
+  "ranks.command.use",
+  "faction.command.use",
+  "near.command.use",
+  "netherplayers.command.use",
+  "endplayers.command.use",
+  "fixallother.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "autofeed.command.use",
+  "craft.command.use",
+  "refys.reclaim",
+]
+
+PlataformAdmin_COL: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "crgive.command.use",
+  "clearinv.command.use",
+  "location.command.use",
+  "history.command.use",
+  "co.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  "refys+.kit.use",
+  
+  "fixall.command.use",
+  "rb.command.use",
+  "ranks.command.use",
+  "faction.command.use",
+  "near.command.use",
+  "netherplayers.command.use",
+  "endplayers.command.use",
+  "fixallother.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "autofeed.command.use",
+  "craft.command.use",
+  "refys.reclaim",
+]
+
+PlataformAdmin_MEX: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "clearinv.command.use",
+  "crgive.command.use",
+  "location.command.use",
+  "history.command.use",
+  "co.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  "refys+.kit.use",
+  
+  "fixall.command.use",
+  "rb.command.use",
+  "ranks.command.use",
+  "faction.command.use",
+  "near.command.use",
+  "netherplayers.command.use",
+  "endplayers.command.use",
+  "fixallother.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "autofeed.command.use",
+  "craft.command.use",
+  "refys.reclaim",
+]
+
+PlataformAdmin_ESP: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "crgive.command.use",
+  "clearinv.command.use",
+  "location.command.use",
+  "history.command.use",
+  "co.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  "refys+.kit.use",
+  
+  "fixall.command.use",
+  "rb.command.use",
+  "ranks.command.use",
+  "faction.command.use",
+  "near.command.use",
+  "netherplayers.command.use",
+  "endplayers.command.use",
+  "fixallother.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "autofeed.command.use",
+  "craft.command.use",
+  "refys.reclaim",
+]
+
+PlataformAdmin_ARG: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "clearinv.command.use",
+  "crgive.command.use",
+  "location.command.use",
+  "history.command.use",
+  "co.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  "refys+.kit.use",
+  
+  "fixall.command.use",
+  "rb.command.use",
+  "ranks.command.use",
+  "faction.command.use",
+  "near.command.use",
+  "netherplayers.command.use",
+  "endplayers.command.use",
+  "fixallother.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "autofeed.command.use",
+  "craft.command.use",
+  "refys.reclaim",
+]
+
+SrAdmin: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "clearinv.command.use",
+  "location.command.use",
+  "history.command.use",
+  "co.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  
+  "fixall.command.use",
+  "rb.command.use",
+  "ranks.command.use",
+  "faction.command.use",
+  "near.command.use",
+  "netherplayers.command.use",
+  "endplayers.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "autofeed.command.use",
+  "craft.command.use",
+  "poison.reclaim",
+]
+
+SrAdmin_COL: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "clearinv.command.use",
+  "location.command.use",
+  "history.command.use",
+  "co.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  
+  "fixall.command.use",
+  "rb.command.use",
+  "ranks.command.use",
+  "faction.command.use",
+  "near.command.use",
+  "netherplayers.command.use",
+  "endplayers.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "autofeed.command.use",
+  "craft.command.use",
+  "poison.reclaim",
+]
+
+SrAdmin_MEX: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "clearinv.command.use",
+  "location.command.use",
+  "history.command.use",
+  "co.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  
+  "fixall.command.use",
+  "rb.command.use",
+  "ranks.command.use",
+  "faction.command.use",
+  "near.command.use",
+  "netherplayers.command.use",
+  "endplayers.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "autofeed.command.use",
+  "craft.command.use",
+  "poison.reclaim",
+]
+
+SrAdmin_ESP: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "clearinv.command.use",
+  "location.command.use",
+  "history.command.use",
+  "co.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  
+  "fixall.command.use",
+  "rb.command.use",
+  "ranks.command.use",
+  "faction.command.use",
+  "near.command.use",
+  "netherplayers.command.use",
+  "endplayers.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "autofeed.command.use",
+  "craft.command.use",
+  "poison.reclaim",
+]
+
+SrAdmin_ARG: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "clearinv.command.use",
+  "location.command.use",
+  "history.command.use",
+  "co.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  
+  "fixall.command.use",
+  "rb.command.use",
+  "ranks.command.use",
+  "faction.command.use",
+  "near.command.use",
+  "netherplayers.command.use",
+  "endplayers.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "autofeed.command.use",
+  "craft.command.use",
+  "poison.reclaim",
+]
+
+Admin: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "clearinv.command.use",
+  "location.command.use",
+  "history.command.use",
+  "co.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  
+  "fixall.command.use",
+  "rb.command.use",
+  "ranks.command.use",
+  "near.command.use",
+  "netherplayers.command.use",
+  "endplayers.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "autofeed.command.use",
+  "craft.command.use",
+  "poison.reclaim",
+]
+
+Admin_COL: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "clearinv.command.use",
+  "location.command.use",
+  "history.command.use",
+  "co.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  
+  "fixall.command.use",
+  "rb.command.use",
+  "ranks.command.use",
+  "near.command.use",
+  "netherplayers.command.use",
+  "endplayers.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "autofeed.command.use",
+  "craft.command.use",
+  "poison.reclaim",
+]
+
+Admin_MEX: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "clearinv.command.use",
+  "location.command.use",
+  "history.command.use",
+  "co.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  
+  "fixall.command.use",
+  "rb.command.use",
+  "ranks.command.use",
+  "near.command.use",
+  "netherplayers.command.use",
+  "endplayers.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "autofeed.command.use",
+  "craft.command.use",
+  "poison.reclaim",
+]
+
+Admin_ESP: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "clearinv.command.use",
+  "location.command.use",
+  "history.command.use",
+  "co.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  
+  "fixall.command.use",
+  "rb.command.use",
+  "ranks.command.use",
+  "near.command.use",
+  "netherplayers.command.use",
+  "endplayers.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "autofeed.command.use",
+  "craft.command.use",
+  "poison.reclaim",
+]
+
+Admin_ARG: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "clearinv.command.use",
+  "location.command.use",
+  "history.command.use",
+  "co.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  
+  "fixall.command.use",
+  "rb.command.use",
+  "ranks.command.use",
+  "near.command.use",
+  "netherplayers.command.use",
+  "endplayers.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "autofeed.command.use",
+  "craft.command.use",
+  "poison.reclaim",
+]
+
+JrAdmin: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "location.command.use",
+  "history.command.use",
+  "co.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  
+  "fixall.command.use",
+  "rb.command.use",
+  "near.command.use",
+  "netherplayers.command.use",
+  "endplayers.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "autofeed.command.use",
+  "craft.command.use",
+  "poison.reclaim",
+]
+
+JrAdmin_COL: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "location.command.use",
+  "history.command.use",
+  "co.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  
+  "fixall.command.use",
+  "rb.command.use",
+  "near.command.use",
+  "netherplayers.command.use",
+  "endplayers.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "autofeed.command.use",
+  "craft.command.use",
+  "poison.reclaim",
+]
+
+JrAdmin_MEX: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "location.command.use",
+  "history.command.use",
+  "co.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  
+  "fixall.command.use",
+  "rb.command.use",
+  "near.command.use",
+  "netherplayers.command.use",
+  "endplayers.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "autofeed.command.use",
+  "craft.command.use",
+  "poison.reclaim",
+]
+
+JrAdmin_ESP: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "location.command.use",
+  "history.command.use",
+  "co.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  
+  "fixall.command.use",
+  "rb.command.use",
+  "near.command.use",
+  "netherplayers.command.use",
+  "endplayers.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "autofeed.command.use",
+  "craft.command.use",
+  "poison.reclaim",
+]
+
+JrAdmin_ARG: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "location.command.use",
+  "history.command.use",
+  "co.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  
+  "fixall.command.use",
+  "rb.command.use",
+  "near.command.use",
+  "netherplayers.command.use",
+  "endplayers.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "autofeed.command.use",
+  "craft.command.use",
+  "poison.reclaim",
+]
+
+SrMod: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "location.command.use",
+  "history.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  
+  "fixall.command.use",
+  "rb.command.use",
+  "near.command.use",
+  "netherplayers.command.use",
+  "endplayers.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "autofeed.command.use",
+  "craft.command.use",
+  "forest.reclaim",
+]
+
+SrMod_COL: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "location.command.use",
+  "history.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  
+  "fixall.command.use",
+  "rb.command.use",
+  "near.command.use",
+  "netherplayers.command.use",
+  "endplayers.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "autofeed.command.use",
+  "craft.command.use",
+  "forest.reclaim",
+]
+
+SrMod_MEX: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "location.command.use",
+  "history.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  
+  "fixall.command.use",
+  "rb.command.use",
+  "near.command.use",
+  "netherplayers.command.use",
+  "endplayers.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "autofeed.command.use",
+  "craft.command.use",
+  "forest.reclaim",
+]
+
+SrMod_ESP: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "location.command.use",
+  "history.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  
+  "fixall.command.use",
+  "rb.command.use",
+  "near.command.use",
+  "netherplayers.command.use",
+  "endplayers.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "autofeed.command.use",
+  "craft.command.use",
+  "forest.reclaim",
+]
+
+SrMod_ARG: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "location.command.use",
+  "history.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  
+  "fixall.command.use",
+  "rb.command.use",
+  "near.command.use",
+  "netherplayers.command.use",
+  "endplayers.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "autofeed.command.use",
+  "craft.command.use",
+  "forest.reclaim",
+]
+
+Mod+: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "location.command.use",
+  "history.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  
+  "fixall.command.use",
+  "rb.command.use",
+  "near.command.use",
+  "endplayers.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "autofeed.command.use",
+  "craft.command.use",
+  "forest.reclaim",
+]
+
+Mod+_COL: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "location.command.use",
+  "history.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  
+  "fixall.command.use",
+  "rb.command.use",
+  "near.command.use",
+  "endplayers.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "autofeed.command.use",
+  "craft.command.use",
+  "forest.reclaim",
+]
+
+Mod+_MEX: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "location.command.use",
+  "history.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  
+  "fixall.command.use",
+  "rb.command.use",
+  "near.command.use",
+  "endplayers.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "autofeed.command.use",
+  "craft.command.use",
+  "forest.reclaim",
+]
+
+Mod+_ESP: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "location.command.use",
+  "history.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  
+  "fixall.command.use",
+  "rb.command.use",
+  "near.command.use",
+  "endplayers.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "autofeed.command.use",
+  "craft.command.use",
+  "forest.reclaim",
+]
+
+Mod+_ARG: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "location.command.use",
+  "history.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  
+  "fixall.command.use",
+  "rb.command.use",
+  "near.command.use",
+  "endplayers.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "autofeed.command.use",
+  "craft.command.use",
+  "forest.reclaim",
+]
+
+Mod: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "location.command.use",
+  "history.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  
+  "fixall.command.use",
+  "near.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "craft.command.use",
+  "booster.reclaim",
+]
+
+Mod_COL: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "location.command.use",
+  "history.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  
+  "fixall.command.use",
+  "near.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "craft.command.use",
+  "booster.reclaim",
+]
+
+Mod_MEX: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "location.command.use",
+  "history.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  
+  "fixall.command.use",
+  "near.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "craft.command.use",
+  "booster.reclaim",
+]
+
+Mod_ESP: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "location.command.use",
+  "history.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  
+  "fixall.command.use",
+  "near.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "craft.command.use",
+  "booster.reclaim",
+]
+
+Mod_ARG: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "location.command.use",
+  "history.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  
+  "fixall.command.use",
+  "near.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "craft.command.use",
+  "booster.reclaim",
+]
+
+Trial-Mod: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "history.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  
+  "fixall.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "craft.command.use",
+  "booster.reclaim",
+]
+
+Trial-Mod_COL: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "location.command.use",
+  "history.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  
+  "fixall.command.use",
+  "near.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "craft.command.use",
+  "booster.reclaim",
+]
+
+Trial-Mod_MEX: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "location.command.use",
+  "history.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  
+  "fixall.command.use",
+  "near.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "craft.command.use",
+  "booster.reclaim",
+]
+
+Trial-Mod_ESP: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "location.command.use",
+  "history.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  
+  "fixall.command.use",
+  "near.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "craft.command.use",
+  "booster.reclaim",
+]
+
+Trial-Mod_ARG: [
+  "pocketmine.command.teleport",
+  "mod.command.use",
+  "permaban.command.use",
+  "banlist.command.use",
+  "location.command.use",
+  "history.command.use",
+  "kick.command.use",
+  "viewprivate.command.use",
+  "report.command.use",
+  "sc.command.use",
+  "tban.command.use",
+  "tmute.command.use",
+  "mute.command.use",
+  "unmute.command.use",
+  "unban.command.use",
+  "warn.command.use",
+  
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  
+  "fixall.command.use",
+  "near.command.use",
+  "rename.command.use",
+  "freeze",
+  "freeze.command",
+  "feed.command.use",
+  "craft.command.use",
+  "booster.reclaim",
+]
+
+# RANKS VIP PAY
+
+Forest: [
+  "free.kit.use",
+  "archer.kit.use",
+  
+  "feed.command.use",
+  "rename.command.use",
+  "craft.command.use",
+  "forest.reclaim",
+]
+
+Forest_COL: [
+  "free.kit.use",
+  "archer.kit.use",
+  
+  "feed.command.use",
+  "rename.command.use",
+  "craft.command.use",
+  "forest.reclaim",
+]
+
+Forest_MEX: [
+  "free.kit.use",
+  "archer.kit.use",
+  
+  "feed.command.use",
+  "rename.command.use",
+  "craft.command.use",
+  "forest.reclaim",
+]
+
+Forest_ESP: [
+  "free.kit.use",
+  "archer.kit.use",
+  
+  "feed.command.use",
+  "rename.command.use",
+  "craft.command.use",
+  "forest.reclaim",
+]
+
+Forest_ARG: [
+  "free.kit.use",
+  "archer.kit.use",
+  
+  "feed.command.use",
+  "rename.command.use",
+  "craft.command.use",
+  "forest.reclaim",
+]
+
+Poison: [
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  
+  "expire.chat.command",
+  
+  "fixhand.command.use",
+  "fixall.command.use",
+  "feed.command.use",
+  "rename.command.use",
+  "poison.reclaim",
+]
+
+Poison_COL: [
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  
+  "expire.chat.command",
+  
+  "fixhand.command.use",
+  "fixall.command.use",
+  "feed.command.use",
+  "rename.command.use",
+  "poison.reclaim",
+]
+
+Poison_MEX: [
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  
+  "expire.chat.command",
+  
+  "fixhand.command.use",
+  "fixall.command.use",
+  "feed.command.use",
+  "rename.command.use",
+  "poison.reclaim",
+]
+
+Poison_ESP: [
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  
+  "expire.chat.command",
+  
+  "fixhand.command.use",
+  "fixall.command.use",
+  "feed.command.use",
+  "rename.command.use",
+  "poison.reclaim",
+]
+
+Poison_ARG: [
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+ 
+ "expire.chat.command",
+ 
+  "fixhand.command.use",
+  "fixall.command.use",
+  "feed.command.use",
+  "rename.command.use",
+  "poison.reclaim",
+]
+
+Refys: [
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  
+  "expire.chat.command",
+  
+  "fixhand.command.use",
+  "endplayers.command.use",
+  "near.command.use",
+  "fixall.command.use",
+  "feed.command.use",
+  "rename.command.use",
+  "craft.command.use",
+  "refys.reclaim",
+  "fixallother.command.use",
+]
+
+Refys_COL: [
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  
+  "expire.chat.command",
+  
+  "fixhand.command.use",
+  "endplayers.command.use",
+  "near.command.use",
+  "fixall.command.use",
+  "feed.command.use",
+  "rename.command.use",
+  "craft.command.use",
+  "refys.reclaim",
+  "fixallother.command.use",
+]
+
+Refys_MEX: [
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  
+  "expire.chat.command",
+  
+  "fixhand.command.use",
+  "endplayers.command.use",
+  "near.command.use",
+  "fixall.command.use",
+  "feed.command.use",
+  "rename.command.use",
+  "craft.command.use",
+  "fixallother.command.use",
+  "refys.reclaim",
+]
+
+Refys_ESP: [
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  
+  "expire.chat.command",
+  
+  "fixhand.command.use",
+  "endplayers.command.use",
+  "near.command.use",
+  "fixall.command.use",
+  "feed.command.use",
+  "rename.command.use",
+  "craft.command.use",
+  "refys.reclaim",
+  "fixallother.command.use",
+]
+
+Refys_ARG: [
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  
+  "expire.chat.command",
+  
+  "fixhand.command.use",
+  "endplayers.command.use",
+  "near.command.use",
+  "fixall.command.use",
+  "feed.command.use",
+  "rename.command.use",
+  "craft.command.use",
+  "refys.reclaim",
+  "fixallother.command.use",
+]
+
+Refys+: [
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  "refys+.kit.use",
+  
+  "expire.chat.command",
+  
+  "fixhand.command.use",
+  "endplayers.command.use",
+  "fixallother.command.use",
+  "near.command.use",
+  "fixall.command.use",
+  "feed.command.use",
+  "autofeed.command.use",
+  "netherplayers.command.use",
+  "rename.command.use",
+  "craft.command.use",
+  "refys+.reclaim",
+]
+
+Refys+_COL: [
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  "refys+.kit.use",
+  
+  "expire.chat.command",
+  
+  "fixhand.command.use",
+  "endplayers.command.use",
+  "fixallother.command.use",
+  "near.command.use",
+  "fixall.command.use",
+  "feed.command.use",
+  "autofeed.command.use",
+  "netherplayers.command.use",
+  "rename.command.use",
+  "craft.command.use",
+  "refys+.reclaim",
+]
+
+Refys+_MEX: [
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  "refys+.kit.use",
+  
+  "expire.chat.command",
+  
+  "fixhand.command.use",
+  "endplayers.command.use",
+  "fixallother.command.use",
+  "near.command.use",
+  "fixall.command.use",
+  "feed.command.use",
+  "autofeed.command.use",
+  "netherplayers.command.use",
+  "rename.command.use",
+  "craft.command.use",
+  "refys+.reclaim",
+]
+
+Refys+_ESP: [
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  "refys+.kit.use",
+  
+  "expire.chat.command",
+  
+  "fixhand.command.use",
+  "endplayers.command.use",
+  "fixallother.command.use",
+  "near.command.use",
+  "fixall.command.use",
+  "feed.command.use",
+  "autofeed.command.use",
+  "netherplayers.command.use",
+  "rename.command.use",
+  "craft.command.use",
+  "refys+.reclaim",
+]
+
+Refys+_ARG: [
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  "refys+.kit.use",
+  
+  "expire.chat.command",
+  
+  "fixhand.command.use",
+  "endplayers.command.use",
+  "fixallother.command.use",
+  "near.command.use",
+  "fixall.command.use",
+  "feed.command.use",
+  "autofeed.command.use",
+  "netherplayers.command.use",
+  "rename.command.use",
+  "craft.command.use",
+  "refys+.reclaim",
+]
+
+# RANKS MEDIA
+
+MiniYT: [
+  "free.kit.use",
+
+  "fixhand.command.use",
+  "feed.command.use",
+  "booster.reclaim",
+]
+
+MiniYT_COL: [
+  "free.kit.use",
+
+  "fixhand.command.use",
+  "feed.command.use",
+  "booster.reclaim",
+]
+
+MiniYT_MEX: [
+  "free.kit.use",
+
+  "fixhand.command.use",
+  "feed.command.use",
+  "booster.reclaim",
+]
+
+MiniYT_ESP: [
+  "free.kit.use",
+
+  "fixhand.command.use",
+  "feed.command.use",
+  "booster.reclaim",
+]
+
+MiniYT_ARG: [
+  "free.kit.use",
+
+  "fixhand.command.use",
+  "feed.command.use",
+  "booster.reclaim",
+]
+
+YouTuber: [
+  "free.kit.use",
+  "archer.kit.use",
+  
+  "fixhand.command.use",
+  "rename.command.use",
+  "feed.command.use",
+  "youtuber.reclaim",
+]
+
+YouTuber_COL: [
+  "free.kit.use",
+  "archer.kit.use",
+  
+  "fixhand.command.use",
+  "rename.command.use",
+  "feed.command.use",
+  "youtuber.reclaim",
+]
+
+YouTuber_MEX: [
+  "free.kit.use",
+  "archer.kit.use",
+  
+  "fixhand.command.use",
+  "rename.command.use",
+  "feed.command.use",
+  "youtuber.reclaim",
+]
+
+YouTuber_ESP: [
+  "free.kit.use",
+  "archer.kit.use",
+  
+  "fixhand.command.use",
+  "rename.command.use",
+  "feed.command.use",
+  "youtuber.reclaim",
+]
+
+YouTuber_ARG: [
+  "free.kit.use",
+  "archer.kit.use",
+  
+  "fixhand.command.use",
+  "rename.command.use",
+  "feed.command.use",
+  "youtuber.reclaim",
+]
+
+Famous: [
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  
+  "expire.chat.command",
+  
+  "fixall.command.use",
+  "endplayers.command.use",
+  "netherplayers.command.use",
+  "fixhand.command.use",
+  "feed.command.use",
+  "rename.command.use",
+  "famous.reclaim",
+]
+
+Famous_COL: [
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  
+  "expire.chat.command",
+  
+  "fixall.command.use",
+  "endplayers.command.use",
+  "netherplayers.command.use",
+  "fixhand.command.use",
+  "feed.command.use",
+  "rename.command.use",
+  "famous.reclaim",
+]
+
+Famous_MEX: [
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  
+  "expire.chat.command",
+  
+  "fixall.command.use",
+  "endplayers.command.use",
+  "netherplayers.command.use",
+  "fixhand.command.use",
+  "feed.command.use",
+  "rename.command.use",
+  "famous.reclaim",
+]
+
+Famous_ESP: [
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  
+  "expire.chat.command",
+  
+  "fixall.command.use",
+  "endplayers.command.use",
+  "netherplayers.command.use",
+  "fixhand.command.use",
+  "feed.command.use",
+  "rename.command.use",
+  "famous.reclaim",
+]
+
+Famous_ARG: [
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  
+  "expire.chat.command",
+  
+  "fixall.command.use",
+  "endplayers.command.use",
+  "netherplayers.command.use",
+  "fixhand.command.use",
+  "feed.command.use",
+  "rename.command.use",
+  "famous.reclaim",
+]
+
+Partner: [
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  "refys+.kit.use",
+  
+  "expire.chat.command",
+  "use.egg.item",
+  
+  "autofeed.command.use",
+  "fixall.command.use",
+  "fixallother.command.use",
+  "endplayers.command.use",
+  "netherplayers.command.use",
+  "fixhand.command.use",
+  "feed.command.use",
+  "rename.command.use",
+  "near.command.use",
+  "craft.command.use",
+  "partner.reclaim",
+]
+
+Partner: [
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  "refys+.kit.use",
+  
+  "expire.chat.command",
+  "use.egg.item",
+  
+  "autofeed.command.use",
+  "fixall.command.use",
+  "fixallother.command.use",
+  "endplayers.command.use",
+  "netherplayers.command.use",
+  "fixhand.command.use",
+  "feed.command.use",
+  "rename.command.use",
+  "near.command.use",
+  "craft.command.use",
+  "partner.reclaim",
+]
+
+Partner_COL: [
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  "refys+.kit.use",
+  
+  "expire.chat.command",
+  "use.egg.item",
+  
+  "autofeed.command.use",
+  "fixall.command.use",
+  "fixallother.command.use",
+  "endplayers.command.use",
+  "netherplayers.command.use",
+  "fixhand.command.use",
+  "feed.command.use",
+  "rename.command.use",
+  "near.command.use",
+  "craft.command.use",
+  "partner.reclaim",
+]
+
+Partner_MEX: [
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  "refys+.kit.use",
+  
+  "expire.chat.command",
+  "use.egg.item",
+  
+  "autofeed.command.use",
+  "fixall.command.use",
+  "fixallother.command.use",
+  "endplayers.command.use",
+  "netherplayers.command.use",
+  "fixhand.command.use",
+  "feed.command.use",
+  "rename.command.use",
+  "near.command.use",
+  "craft.command.use",
+  "partner.reclaim",
+]
+
+Partner_ESP: [
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  "refys+.kit.use",
+  
+  "expire.chat.command",
+  "use.egg.item",
+  
+  "autofeed.command.use",
+  "fixall.command.use",
+  "fixallother.command.use",
+  "endplayers.command.use",
+  "netherplayers.command.use",
+  "fixhand.command.use",
+  "feed.command.use",
+  "rename.command.use",
+  "near.command.use",
+  "craft.command.use",
+  "partner.reclaim",
+]
+
+Partner_ARG: [
+  "free.kit.use",
+  "archer.kit.use",
+  "rogue.kit.use",
+  "opbard.kit.use",
+  "refys.kit.use",
+  "refys+.kit.use",
+  
+  "expire.chat.command",
+  "use.egg.item",
+  
+  "autofeed.command.use",
+  "fixall.command.use",
+  "fixallother.command.use",
+  "endplayers.command.use",
+  "netherplayers.command.use",
+  "fixhand.command.use",
+  "feed.command.use",
+  "rename.command.use",
+  "near.command.use",
+  "craft.command.use",
+  "partner.reclaim",
+]
+
+# RANKS DISCORD BOOSTER
+
+Booster: [
+  "free.kit.use",
+  "archer.kit.use",
+  
+  "fixhand.command.use",
+  "feed.command.use",
+  "rename.command.use",
+  "booster.reclaim",
+]
+
+Booster_COL: [
+  "free.kit.use",
+  "archer.kit.use",
+  
+  "fixhand.command.use",
+  "feed.command.use",
+  "rename.command.use",
+  "booster.reclaim",
+]
+
+Booster_MEX: [
+  "free.kit.use",
+  "archer.kit.use",
+  
+  "fixhand.command.use",
+  "feed.command.use",
+  "rename.command.use",
+  "booster.reclaim",
+]
+
+Booster_ESP: [
+  "free.kit.use",
+  
+  "archer.kit.use",
+  
+  "fixhand.command.use",
+  "feed.command.use",
+  "rename.command.use",
+  "booster.reclaim",
+]
+
+Booster_ARG: [
+  "free.kit.use",
+  
+  "archer.kit.use",
+  
+  "fixhand.command.use",
+  "feed.command.use",
+  "rename.command.use",
+  "booster.reclaim",
+]
+
+BoosterCloned: [
+  "free.kit.use",
+  
+  "archer.kit.use",
+  
+  "feed.command.use",
+  "rename.command.use",
+  "booster.reclaim",
+]
+
+BoosterCloned_COL: [
+  "free.kit.use",
+  
+  "archer.kit.use",
+  
+  "feed.command.use",
+  "rename.command.use",
+  "booster.reclaim",
+]
+
+BoosterCloned_MEX: [
+  "free.kit.use",
+  
+  "archer.kit.use",
+  
+  "feed.command.use",
+  "rename.command.use",
+  "booster.reclaim",
+]
+
+BoosterCloned_ESP: [
+  "free.kit.use",
+  
+  "archer.kit.use",
+  
+  "feed.command.use",
+  "rename.command.use",
+  "booster.reclaim",
+]
+
+BoosterCloned_ARG: [
+  "free.kit.use",
+  
+  "archer.kit.use",
+  
+  "feed.command.use",
+  "rename.command.use",
+  "booster.reclaim",
+]
+
+Member_COL: [
+  "free.kit.use",
+  
+  "member.reclaim",
+]
+
+Member_MEX: [
+  "free.kit.use",
+  
+  "member.reclaim",
+]
+
+Member_ARG: [
+  "free.kit.use",
+  
+  "member.reclaim",
+]
+
+Member_ESP: [
+  "free.kit.use",
+  
+  "member.reclaim",
+]
+# END FILE
