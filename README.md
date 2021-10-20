@@ -1,3 +1,3 @@
-# BullHCF_Core
+# Syfer Network
 
-Core HCF del servidor BullHCF
+Core HCF del servidor SyferHCF
