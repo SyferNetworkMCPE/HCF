@@ -1,8 +1,6 @@
-name: BullHCF
-author: iBryMax [WalnutDeveloper Mod for BullHCF]
-main: BullHCF\Loader
-version: 3.2.0
-api: [3.2.3]
-depend:
-  - PurePerms
-  - PureChat-WalnutMod
+name: SyferHCF
+author: Deepzh & iVrymax
+main: SyferHCF\Loader
+version: 2.0 BETA
+api: [3.0.0]
+description: SyferHCF Bedrock Core
