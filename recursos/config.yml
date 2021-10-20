@@ -1,18 +1,18 @@
 ---
 
 # This is webhook for discord message
-URL: "https://discord.com/api/webhooks/854077676990234624/YO5p4lssnGhnuRRI9UrrKSzqjan922O3FzCUiUtbcWOGxjf1oRgjYyLCvq4mTrBixQ4y"
+URL: ""
 
 # Database configuration.
 MySQL:
   # Here must go your IP of the connection to MySQL
-  hostname: "localhost"
+  hostname: "45.58.127.223"
   # the username (in local mode is always 'root') of your hostname
-  username: "root"
+  username: "u846_mLmLAonBFy"
   # If you do not have a password (if you are in local mode) do not change anything or the connection to MySQL will not be established
-  password: "toor"
+  password: "Gy1o@uF=.+Mb9VYbAemDXTdV"
   # The connection to create the tables, etc.
-  database: "localdatabase"
+  database: "s846_Pocketmine"
   # Use it if the connection is not local
   port: 3306
 
@@ -22,42 +22,59 @@ Global:
 # This configuration sets the time of each function (indicated by its name)
 Cooldowns:
   # These are the cooldowns of the items, or other things within the server that can be modified to have more or less time
-  EnderPearl: 10
+  EnderPearl: 15
 
   CombatTag: 25
 
   ArcherTag: 10
+  
+  OpArcherTag: 7
 
-  Apple: 15
+  Camuflaje: 150
 
-  EggPort: 15
+  Apple: 25
+  
+  Archer_Mark: 8
+  
+  ROGUE_DELAY: 3
+  
+  Backstap: 8
+  
+  Refill: 300
+  
+  Snowball: 25
+  
+  OpBackstap: 12
+  
+  ResetItems: 120
+  
+  EggPorts: 30
 
-  SpecialItem: 15
+  SpecialItem: 35
 
-  StormBreaker: 120
+  StormBreaker: 150
 
-  NinjaShear: 120
+  NinjaShear: 150
 
-  PotionCounter: 90
+  LoggerBait: 150
+  
+  PotionCounter: 100
 
-  AntiTrapper: 120
+  AntiTrapper: 150
 
-  AntiTrapperTarget: 20
+  AntiTrapperTarget: 30
 
-  # These seconds are for the commands '/f home, /f stuck and /logout'.
-  Home: 25
+  # These seconds are for the commands '/f home, /f stuck, /spawn and /logout'.
+  Home: 20
 
   Stuck: 35
 
-  Logout: 30
-
+  Logout: 40
+  
 # Here you can modify the maximum values of the map factions (testing)
 FactionsConfig:
   # Maximum players per map faction
-  maxPlayers: 15
-
-  # You can modify if the water has a radius or is static
-  SpreadWater: false
+  maxPlayers: 10
   # The edge of the end of map
   BorderLimit: 2000
   # Wilderness limit to build
@@ -68,11 +85,29 @@ LevelManager:
   # This time is the time it takes for the spawner to create another entity
   EntitySpawnDelay: 400
   # Modifiable end world
-  levelEndName: "End"
-  # Modifiable end world
-  levelNetherName: "Nether"
+  levelEndName: "end"
+  # Modifiable nether world
+  levelNetherName: "nether"
+  
+Worlds:
+# modifiable name the nether world
+  nether: "nether"
+# modifiable name the end world
+  end: "end"
+
+commands:
+    - "me"
+    - "msg"
+    - "tell"
+    - "w"
+    - "say"
+
+commands_block:
+    - "me"
+    - "kill"
+    - "suicide"
     
-# These blocks are the ones you must pass through to enter the End or exit the End
+ # These blocks are the ones you must pass through to enter the End or exit the End
 block_ids: ["119:0", "120:0"]
 
 # These are the items that are blocked on the server
