@@ -16,6 +16,7 @@ use pocketmine\event\Listener;
 use pocketmine\math\Vector3;
 use pocketmine\utils\TextFormat as TE;
 use pocketmine\level\biome\Biome;
+use pocketmine\utils\Config;
 
 use pocketmine\event\level\ChunkLoadEvent;
 use pocketmine\level\sound\GhastShootSound;
