@@ -25,7 +25,6 @@ class Entitys {
 			
 		Entity::registerEntity(EnderPearl::class, true, ["EnderPearl"]);
         Entity::registerEntity(Egg::class, true, ["Egg"]);
-        Entity::registerEntity(Snowball::class, true, ["Snowball"]);
 		Entity::registerEntity(SplashPotion::class, true, ["SplashPotion"]);
 		Entity::registerEntity(Hook::class, false, ["FishingHook", "minecraft:fishing_rod"]);
 	}
