@@ -6,6 +6,7 @@ use SyferHCF\{Loader, Factions};
 use SyferHCF\player\Player;
 
 use SyferHCF\Task\asynctask\RoollbackData;
+use SyferHCF\Task\asynctask\SavePlayerData;
 
 use pocketmine\event\Listener;
 use pocketmine\entity\Entity;
@@ -46,7 +47,7 @@ class Death implements Listener {
 						Factions::setPoints($faction, Factions::getPoints($faction) + 2);
 					}
 				}
-				Loader::getInstance()->getServer()->getAsyncPool()->submitTask(new SaveData($player->getName(), $player->getInventory()->getContents(), $player->getArmorInventory()->getContents(), new Config(Loader::getInstance()->getDataFolder()."backup".DIRECTORY_SEPARATOR."inventory.yml", Config::YAML)));
+				Loader::getInstance()->getServer()->getAsyncPool()->submitTask(new SavePlayerData($player->getName(), $player->getInventory()->getContents(), $player->getArmorInventory()->getContents(), new Config(Loader::getInstance()->getDataFolder()."backup".DIRECTORY_SEPARATOR."inventory.yml", Config::YAML)));
 				Loader::getInstance()->getServer()->getAsyncPool()->submitTask(new RoollbackData($player->getName(), $player->getInventory()->getContents(), $player->getArmorInventory()->getContents(), new Config(Loader::getInstance()->getDataFolder()."backup".DIRECTORY_SEPARATOR."inventory.yml", Config::YAML)));
 				$event->setDeathMessage(TE::DARK_RED.$player->getName().TE::GRAY."[".TE::YELLOW.$player->getKills().TE::GRAY."]".TE::GRAY."[".TE::RED.$player->getHealth().TE::GRAY."]".TE::YELLOW." was killed by ".TE::RESET.TE::RED.$damager->getName().TE::GRAY."[".TE::YELLOW.$damager->getKills().TE::GRAY."]".TE::GRAY."[".TE::RED.$damager->getHealth().TE::GRAY."]".TE::YELLOW." using ".TE::AQUA.$damager->getInventory()->getItemInHand()->getName());
 			}else{
