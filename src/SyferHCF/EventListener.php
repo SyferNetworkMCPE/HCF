@@ -1,4 +1,3 @@
-
 <?php
 
 namespace SyferHCF;
@@ -17,6 +16,10 @@ use pocketmine\math\Vector3;
 use pocketmine\utils\TextFormat as TE;
 use pocketmine\level\biome\Biome;
 use pocketmine\utils\Config;
+use pocketmine\Server;
+use pocketmine\event\server\DataPacketReceiveEvent;
+use pocketmine\event\server\DataPacketSendEvent;
+use pocketmine\network\mcpe\protocol\DisconnectPacket;
 
 use pocketmine\event\level\ChunkLoadEvent;
 use pocketmine\level\sound\GhastShootSound;
@@ -63,11 +66,11 @@ class EventListener implements Listener {
         $player->sendMessage("§8      §6");
 	    $player->sendMessage("§8       §6");
 		$player->sendMessage("§8      §d§lSyferHCF     ");
-		$player->sendMessage("§8  §7Welcome to Map §f#§5BETA-2.0");
+		$player->sendMessage("§8  §7Welcome to Map §a#BETA-2.0");
 		$player->sendMessage("§8 §b");
-		$player->sendMessage("§l§5Store§r§f: §r§dhttps://syferhcf.tebex.io");
-		$player->sendMessage("§l§5Discord§r§f: §r§dhttps://discord.gg/uMUgd63YAZ");
-		$player->sendMessage("§l§5Vote§r§f: §r§dComming Soon!");
+		$player->sendMessage("§l§aStore§r§f: §r§dhttps://syferhcf.tebex.io");
+		$player->sendMessage("§l§aDiscord§r§f: §r§dhttps://discord.gg/uMUgd63YAZ");
+		$player->sendMessage("§l§aVote§r§f: §r§dComming Soon!");
 		$player->sendMessage("§8       §6");
 		$player->sendMessage("§8       §6");
 		$player->sendMessage("§r§7Welcome to SyferHCF!");
@@ -89,6 +92,19 @@ class EventListener implements Listener {
       }
     }
   }
+  
+  
+  public function whiteListed(DataPacketSendEvent $event)
+	{
+		$packet = $event->getPacket();
+		$player = $event->getPlayer();
+		if ($packet instanceof DisconnectPacket && $packet->message === "Server is white-listed") {
+			$packet->message = ("§d§lSyferHCF §r§7is currently whitelisted. \n §a§lDiscord§r§7: §bhttps://discord.gg/bgCqypNwRD \n §a§lBUYCRAFT§r§7: §bsyferhcf.tebex.io");
+			foreach (Server::getInstance()->getOnlinePlayers() as $player) {
+				$staff->sendMessage("§a§lUPDATE §r§d{$player->getName()} §r§7tried connecting but §cdisconnected §r§7due to the server being §f§lWHITELISTED.");
+			}
+		}
+	}
 
   /**
   * @param PlayerDeathEvent
