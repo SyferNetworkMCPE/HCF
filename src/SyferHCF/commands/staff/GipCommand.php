@@ -20,7 +20,7 @@ class GipCommand extends PluginCommand {
 	 */
 	public function __construct(){
         parent::__construct("location", Loader::getInstance());
-    $this->setDescription("view country the player")
+    $this->setDescription("view country the player");
 		$this->setPermission("location.command.use");
 	}
 	
