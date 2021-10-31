@@ -1,6 +1,6 @@
 ---
 # Scoreboard Configuration
-scoreboard_name: "§d§lSyfer§r§7 | §fBETA-2.0"
+scoreboard_name: "§d§lHCF §7[§f2.0§7]"
 
 # Information: '{time}' takes the value of the remaining time
 CombatTag: "&c&lSpawn Tag&r&f: &c{time} "
@@ -86,8 +86,8 @@ MageEnergy: "&d&lMageEnergy&r&f: &c{mageEnergy}.0"
 # These texts are displayed if the player focused on any faction
 factionFocus: [ 
   " ",
-  "&l&5Team&r&f: &d{factionName} ", 
-  "&l&5HQ&r&f: &d{factionHome} ", 
-  "&l&5DTR&r&f: &d{factionDTR}&e■ ", 
-  "&l&5Online&r&f: &d{factionOnlinePlayers} ", 
+  "&l&dTeam&r&f: &d{factionName} ", 
+  "&l&dHQ&r&f: &afactionHome} ", 
+  "&l&dDTR&r&f: &a{factionDTR}&e■ ", 
+  "&l&dOnline&r&f: &a{factionOnlinePlayers} ", 
 ]
