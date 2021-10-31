@@ -1,6 +1,6 @@
 ---
 # Scoreboard Configuration
-scoreboard_name: "§d§lHCF §7[§f2.0§7]"
+scoreboard_name: " §d§lHCF §7[§f2.0§7] "
 
 # Information: '{time}' takes the value of the remaining time
 CombatTag: "&c&lSpawn Tag&r&f: &c{time} "
