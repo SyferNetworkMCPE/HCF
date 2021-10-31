@@ -35,15 +35,15 @@ class TopKillTask extends Task {
         if ($entities instanceof Top1) {
           $entities->setNameTag(TopKillTask::setTop1());
           $entities->setNameTagAlwaysVisible(true);
-          $entities->setScale(0.7);
+          $entities->setScale(0.o);
         } else if ($entities instanceof Top2) {
           $entities->setNameTag(TopKillTask::setTop2());
           $entities->setNameTagAlwaysVisible(true);
-          $entities->setScale(0.7);
+          $entities->setScale(0.9);
         } else if ($entities instanceof Top3) {
           $entities->setNameTag(TopKillTask::setTop3());
           $entities->setNameTagAlwaysVisible(true);
-          $entities->setScale(0.7);
+          $entities->setScale(0.9);
         }
       }
     }
@@ -92,11 +92,11 @@ class TopKillTask extends Task {
     $pl = array_reverse($tops);
     if ($pl[1] != null) {
       $top1 = array_search($pl[1], $kills->getAll());
-      $subtitle1 = "§f{$top1}" . "\n" . "§f" . $pl[1] . " §cKills";
+      $subtitle1 = "§f{$top2}" . "\n" . "§f" . $pl[1] . " §cKills";
       foreach (Server::getInstance()->getLevels() as $levels) {
         foreach ($levels->getEntities() as $entities) {
           if ($entities instanceof Top2) {
-            $skinData = SkinConverter::imageToSkinDataFromPngPath(Loader::getInstance()->getDataFolder() . "Skins/{$top1}.png");
+            $skinData = SkinConverter::imageToSkinDataFromPngPath(Loader::getInstance()->getDataFolder() . "Skins/{$top2}.png");
             $entities->setSkin(new Skin("custom_skin", $skinData));
           }
         }
@@ -121,11 +121,11 @@ class TopKillTask extends Task {
     $pl = array_reverse($tops);
     if ($pl[2] != null) {
       $top1 = array_search($pl[2], $kills->getAll());
-      $subtitle1 = "§f{$top1}" . "\n" . "§f" . $pl[2] . " §cKills";
+      $subtitle1 = "§f{$top3}" . "\n" . "§f" . $pl[2] . " §cKills";
       foreach (Server::getInstance()->getLevels() as $levels) {
         foreach ($levels->getEntities() as $entities) {
           if ($entities instanceof Top3) {
-            $skinData = SkinConverter::imageToSkinDataFromPngPath(Loader::getInstance()->getDataFolder() . "Skins/{$top1}.png");
+            $skinData = SkinConverter::imageToSkinDataFromPngPath(Loader::getInstance()->getDataFolder() . "Skins/{$top3}.png");
             $entities->setSkin(new Skin("custom_skin", $skinData));
           }
         }
