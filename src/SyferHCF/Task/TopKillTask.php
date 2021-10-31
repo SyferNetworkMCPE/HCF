@@ -35,7 +35,7 @@ class TopKillTask extends Task {
         if ($entities instanceof Top1) {
           $entities->setNameTag(TopKillTask::setTop1());
           $entities->setNameTagAlwaysVisible(true);
-          $entities->setScale(0.o);
+          $entities->setScale(0.9);
         } else if ($entities instanceof Top2) {
           $entities->setNameTag(TopKillTask::setTop2());
           $entities->setNameTagAlwaysVisible(true);
@@ -73,7 +73,7 @@ class TopKillTask extends Task {
         }
       }
     } else {
-      $subtitle1 = '§cUnknown';
+      $subtitle1 = '§cNone';
     }
     return $title . $subtitle1;
   }
@@ -102,7 +102,7 @@ class TopKillTask extends Task {
         }
       }
     } else {
-      $subtitle1 = '§cUnknown';
+      $subtitle1 = '§cNone';
     }
     return $title . $subtitle1;
   }
@@ -131,7 +131,7 @@ class TopKillTask extends Task {
         }
       }
     } else {
-      $subtitle1 = '§cUnknown';
+      $subtitle1 = '§cNone';
     }
     return $title . $subtitle1;
   }
